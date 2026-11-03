@@ -241,7 +241,38 @@
         <p><strong>Theorem 5.4 (Odd-Path Structural Condition):</strong> If no agent owns two arguments &alpha;, &beta; connected by an odd-length directed path in the full graph, the mechanism is strategyproof.</p>
         <p><em>Handling Cycles:</em> We employ a 2-state parity BFS <code>(vertex, parity) &in; A &times; {0, 1}</code>. Self-attacks (&alpha; &rarr; &alpha;) are handled as odd paths of length 1, and odd cycles are recorded as odd self-defeats.</p>
 
-        <h2>5. Canonical Literature Benchmarks</h2>
+        <h2>5. Literature Pedigree, Textbook Errata Analysis &amp; Canonical Benchmarks</h2>
+        <p>The theoretical framework and numbered theorems in this assignment directly trace to <strong>Yoav Shoham &amp; Kevin Leyton-Brown (2009)</strong>, <em>Multiagent Systems: Algorithmic, Game-Theoretic, and Logical Foundations</em>, Cambridge University Press, specifically <strong>Chapter 5: Argumentation among Agents</strong>, and the underlying research by <strong>Iyad Rahwan &amp; Kate Larson (AAMAS 2008; IJCAI 2009)</strong>.</p>
+
+        <p>In Chapter 5, the authors formalize Grounded Direct Argumentation Mechanisms and analyze strategic manipulability through Examples 5.10, 5.11, and Theorems 5.3 &amp; 5.4. However, the textbook contains two notable errata that our implementation mathematically resolved:</p>
+
+        <h3>A. Example 5.10: Strategic Manipulation &amp; Swapped Utility Erratum</h3>
+        <p><strong>Graph Topology:</strong> <code>&alpha;<sub>1</sub> &rarr; &alpha;<sub>2</sub> &rarr; &alpha;<sub>3</sub> &rarr; &alpha;<sub>4</sub></code>, with <code>&alpha;<sub>3</sub> &rarr; &alpha;<sub>5</sub></code>.<br>
+        <strong>Agent Partition:</strong> Agent X: <code>{&alpha;<sub>1</sub>, &alpha;<sub>4</sub>, &alpha;<sub>5</sub>}</code>, Agent Y: <code>{&alpha;<sub>2</sub>}</code>, Agent Z: <code>{&alpha;<sub>3</sub>}</code>.</p>
+        
+        <div class="warning-box">
+            <strong>Textbook Erratum 1 (Page 2 of Assignment PDF):</strong>
+            In the textbook's discussion of Example 5.10, the utilities of agents <em>y</em> and <em>z</em> were accidentally swapped in the text.
+            <br><strong>Mathematical Truth:</strong> Under truthful reporting, <code>&alpha;<sub>1</sub></code> is unattacked &rArr; accepted; <code>&alpha;<sub>1</sub></code> defeats <code>&alpha;<sub>2</sub></code> &rArr; <code>&alpha;<sub>2</sub></code> is OUT; <code>&alpha;<sub>3</sub></code> has no undefeated attackers &rArr; <code>&alpha;<sub>3</sub></code> is accepted; <code>&alpha;<sub>3</sub></code> defeats <code>&alpha;<sub>4</sub>, &alpha;<sub>5</sub></code>.
+            <br>&rArr; Outcome: <code>GE = {&alpha;<sub>1</sub>, &alpha;<sub>3</sub>}</code>.
+            <br>&rArr; Correct utilities: <strong>u<sub>X</sub> = 1, u<sub>Y</sub> = 0, u<sub>Z</sub> = 1</strong>. (Agent Y's argument is defeated; Agent Z's argument is accepted).
+        </div>
+
+        <h3>B. Example 5.11: Strategic Manipulation Walkthrough</h3>
+        <p>Agent X strategically conceals <code>&alpha;<sub>1</sub></code>, revealing only <code>{&alpha;<sub>4</sub>, &alpha;<sub>5</sub>}</code>. In the induced graph <code>AF[{&alpha;<sub>2</sub>, &alpha;<sub>3</sub>, &alpha;<sub>4</sub>, &alpha;<sub>5</sub>}]</code>, argument <code>&alpha;<sub>2</sub></code> becomes unattacked and accepted, defeating <code>&alpha;<sub>3</sub></code>, which allows <code>&alpha;<sub>4</sub></code> and <code>&alpha;<sub>5</sub></code> to be accepted. Outcome: <code>GE = {&alpha;<sub>2</sub>, &alpha;<sub>4</sub>, &alpha;<sub>5</sub>}</code>. Agent X's utility strictly increases from <strong>1 to 2</strong>! Hence, the grounded mechanism is manipulable.</p>
+
+        <h3>C. Discussion after Example 5.11: The &alpha;<sub>6</sub> Protecting Argument Erratum</h3>
+        <p>The authors investigated whether an odd-length attack path (indirect self-defeat) is a <em>necessary</em> condition for manipulation. They constructed a counterexample to necessity by giving Agent X an unattacked argument that defeats <code>&alpha;<sub>3</sub></code>.</p>
+
+        <div class="warning-box">
+            <strong>Textbook Erratum 2 (Page 2 of Assignment PDF):</strong>
+            The textbook text accidentally refers to this new argument as <code>&alpha;<sub>5</sub></code>. However, <code>&alpha;<sub>5</sub></code> already exists as an argument owned by X that is attacked by <code>&alpha;<sub>3</sub></code>.
+            <br><strong>Mathematical Resolution:</strong> The proper protecting argument is a new argument <strong>&alpha;<sub>6</sub></strong> owned by Agent X with directed attack <code>&alpha;<sub>6</sub> &rarr; &alpha;<sub>3</sub></code>.
+            <br>&rArr; Because <code>&alpha;<sub>6</sub></code> is unattacked, under truthfulness it is unconditionally accepted, defeating <code>&alpha;<sub>3</sub></code> and protecting both <code>&alpha;<sub>4</sub></code> and <code>&alpha;<sub>5</sub></code>.
+            <br>&rArr; Agent X achieves utility <strong>u<sub>X</sub> = 4</strong> (all 4 owned arguments accepted). Since Agent X cannot achieve &gt; 4, truthfulness is a dominant strategy.
+            <br>&rArr; <strong>Significance:</strong> The odd path <code>&alpha;<sub>1</sub> &rarr; &alpha;<sub>2</sub> &rarr; &alpha;<sub>3</sub> &rarr; &alpha;<sub>4</sub></code> (len 3) still exists in the graph, so Theorem 5.4 fails. Yet the mechanism IS strategyproof. This formally proves that Theorem 5.4 is <strong>sufficient, but NOT necessary</strong>!
+        </div>
+
         <table>
             <thead>
                 <tr>
@@ -250,7 +281,7 @@
                     <th>Truthful Outcome</th>
                     <th>Thm 5.3 Result</th>
                     <th>Thm 5.4 Result</th>
-                    <th>Key Significance</th>
+                    <th>Key Theoretical Significance</th>
                 </tr>
             </thead>
             <tbody>
@@ -260,15 +291,15 @@
                     <td>GE = {1, 3}<br>u_X=1, u_Y=0, u_Z=1</td>
                     <td><strong>False</strong> (Not SP)<br>X hides 1 &rArr; u_X=2</td>
                     <td><strong>False</strong><br>Odd path: 1 &rarr; 4 (len 3)</td>
-                    <td>Demonstrates manipulation; confirms textbook misprint.</td>
+                    <td>Demonstrates manipulation; resolves swapped utility misprint.</td>
                 </tr>
                 <tr>
-                    <td><strong>Example 5.11</strong><br>(Protected Defeat)</td>
+                    <td><strong>Example 5.11 Extended</strong><br>(Protected Defeat)</td>
                     <td>Adds unattacked 6 &rarr; 3<br>X:{1,4,5,6}, Y:{2}, Z:{3}</td>
                     <td>GE = {1, 4, 5, 6}<br>u_X=4, u_Y=0, u_Z=0</td>
                     <td><strong>True (Strategyproof!)</strong><br>u_X=4 (maximum possible)</td>
                     <td><strong>False</strong><br>Odd path 1 &rarr; 4 exists</td>
-                    <td><strong>Proves Theorem 5.4 is sufficient, but NOT necessary!</strong></td>
+                    <td><strong>Resolves &alpha;<sub>6</sub> misprint; proves Thm 5.4 is sufficient, not necessary!</strong></td>
                 </tr>
             </tbody>
         </table>

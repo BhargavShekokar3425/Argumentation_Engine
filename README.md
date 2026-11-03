@@ -172,9 +172,9 @@ The core engine is built using **pure Python 3 (standard library only)**. It has
 - Optional: `matplotlib` (if PNG export is desired; SVG and HTML generation are built-in without dependencies).
 
 ### Setup
-Clone or navigate to the directory:
+Navigate to the directory:
 ```powershell
-cd C:\Users\ASUS\.gemini\antigravity\scratch\argumentation_engine
+cd C:\Users\ASUS\Downloads\prog\Argumentation
 ```
 
 ---
