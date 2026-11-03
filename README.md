@@ -2,7 +2,7 @@
 
 A rigorous computational engine and game-theoretic mechanism implementation for **Abstract Argumentation Frameworks**, **Argumentation Semantics**, and **Strategic Argumentation (Mechanism Design)**.
 
-Developed for **Assignment 3: Argumentation Engine**, this project combines:
+Developed for * Argumentation Engine**, this project combines:
 - **Artificial Intelligence**: Acceptability and justification of arguments under classical Dung semantics.
 - **Graph Theory**: Caminada 3-valued argument labellings, cycles, and parity-aware odd-path graph traversals.
 - **Game Theory & Mechanism Design**: Grounded direct mechanisms, strategic argument hiding, and empirical verification of **Theorem 5.3** (Strategyproofness) and **Theorem 5.4** (Sufficient structural condition).
