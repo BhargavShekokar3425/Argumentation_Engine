@@ -1,0 +1,9 @@
+# Pure Python Standard Library Architecture
+# No external packages are required to run the Argumentation Engine,
+# execute the test suite, run the 3,000 randomized experiments,
+# generate SVG vector charts, or launch the interactive demonstration.
+
+# Optional dependencies for additional formats or development:
+# matplotlib>=3.5.0
+# networkx>=2.8.0
+# pytest>=7.0.0
