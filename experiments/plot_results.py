@@ -1,4 +1,4 @@
-"""
+﻿"""
 Plotting and Visualization Generator for Experimental Results.
 
 Generates:
@@ -181,10 +181,10 @@ def generate_svg_breakdown_chart(summary_data: List[Dict[str, Any]], output_path
     svg.append(f'<text x="{leg_x + 12}" y="{leg_y + 22}" font-size="12" font-weight="700" fill="#1e293b">Categories</text>')
 
     items = [
-        ("SP & Cond Holds", colors["sp_and_cond"]),
-        ("SP & Cond Fails", colors["sp_cond_fails"]),
-        ("Not SP & Cond Fails", colors["not_sp"]),
-        ("Cond Holds & Not SP (0)", colors["anomaly"]),
+        ("SP &amp; Cond Holds", colors["sp_and_cond"]),
+        ("SP &amp; Cond Fails", colors["sp_cond_fails"]),
+        ("Not SP &amp; Cond Fails", colors["not_sp"]),
+        ("Cond Holds &amp; Not SP (0)", colors["anomaly"]),
     ]
     for idx, (lbl, col) in enumerate(items):
         iy = leg_y + 44 + idx * 24
@@ -350,8 +350,8 @@ def generate_interactive_dashboard(
 <body>
     <div class="container">
         <header>
-            <h1>Abstract Argumentation Engine & Strategic Mechanism Dashboard</h1>
-            <div class="subtitle">Complete Experimental Study (3,000 Random Instances across p &in; {{0.15, 0.25, 0.35}}, 3 Agents, n &in; [6, 8])</div>
+            <h1>Abstract Argumentation Engine &amp; Strategic Mechanism Dashboard</h1>
+            <div class="subtitle">Complete Experimental Study (3,000 Random Instances across p ∈ {0.15, 0.25, 0.35}, 3 Agents, n ∈ [6, 8])</div>
         </header>
 
         <div class="grid-cards">
@@ -368,7 +368,7 @@ def generate_interactive_dashboard(
             <div class="card">
                 <div class="card-title">Theorem 5.4 False Positives</div>
                 <div class="card-value" style="color: var(--success);">0</div>
-                <div class="card-subtext">Cond Holds & Not SP: 100% sound sufficient condition</div>
+                <div class="card-subtext">Cond Holds &amp; Not SP: 100% sound sufficient condition</div>
             </div>
             <div class="card">
                 <div class="card-title">SP Despite Cond Fails</div>
@@ -426,10 +426,10 @@ def generate_interactive_dashboard(
         <div class="section-title">Experimental Charts</div>
         <div class="charts-row">
             <div class="chart-box">
-                <object data="strategyproof_comparison.svg" type="image/svg+xml" width="100%"></object>
+                <img src="strategyproof_comparison.svg" alt="Strategyproof Comparison Chart" style="max-width: 100%; height: auto;" />
             </div>
             <div class="chart-box">
-                <object data="outcomes_breakdown.svg" type="image/svg+xml" width="100%"></object>
+                <img src="outcomes_breakdown.svg" alt="Outcomes Breakdown Chart" style="max-width: 100%; height: auto;" />
             </div>
         </div>
 
@@ -500,3 +500,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

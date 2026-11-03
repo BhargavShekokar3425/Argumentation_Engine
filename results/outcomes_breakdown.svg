@@ -47,11 +47,11 @@
 <rect x="610" y="100" width="180" height="150" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
 <text x="622" y="122" font-size="12" font-weight="700" fill="#1e293b">Categories</text>
 <rect x="622" y="144" width="14" height="14" rx="3" fill="#10b981" />
-<text x="642" y="155" font-size="11" fill="#334155">SP & Cond Holds</text>
+<text x="642" y="155" font-size="11" fill="#334155">SP &amp; Cond Holds</text>
 <rect x="622" y="168" width="14" height="14" rx="3" fill="#3b82f6" />
-<text x="642" y="179" font-size="11" fill="#334155">SP & Cond Fails</text>
+<text x="642" y="179" font-size="11" fill="#334155">SP &amp; Cond Fails</text>
 <rect x="622" y="192" width="14" height="14" rx="3" fill="#ef4444" />
-<text x="642" y="203" font-size="11" fill="#334155">Not SP & Cond Fails</text>
+<text x="642" y="203" font-size="11" fill="#334155">Not SP &amp; Cond Fails</text>
 <rect x="622" y="216" width="14" height="14" rx="3" fill="#f59e0b" />
-<text x="642" y="227" font-size="11" fill="#334155">Cond Holds & Not SP (0)</text>
+<text x="642" y="227" font-size="11" fill="#334155">Cond Holds &amp; Not SP (0)</text>
 </svg>

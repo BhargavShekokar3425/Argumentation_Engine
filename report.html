@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 3 Formal Report: Argumentation Engine & Strategic Mechanism</title>
+    <title>Assignment 3 Formal Report: Argumentation Engine &amp; Strategic Mechanism</title>
     <style>
         :root {
             --primary: #1e3a8a;
@@ -178,25 +178,25 @@
 <body>
     <div class="paper">
         <button class="btn-print no-print" onclick="window.print()">Print / Save as PDF</button>
-        <h1>Assignment 3 Technical Report: Abstract Argumentation Engine & Strategic Mechanism</h1>
+        <h1>Assignment 3 Technical Report: Abstract Argumentation Engine &amp; Strategic Mechanism</h1>
         <div class="subtitle">Complete Mathematical Derivation, Algorithmic Implementation, and 3,000-Run Empirical Study</div>
 
         <table class="meta-table">
             <tr>
-                <td><strong>Module / Topic:</strong> Abstract Argumentation & Strategic Mechanism Design</td>
+                <td><strong>Module / Topic:</strong> Abstract Argumentation &amp; Strategic Mechanism Design</td>
                 <td><strong>Target Deliverable:</strong> Code, README, Full Report, Demonstration</td>
             </tr>
             <tr>
                 <td><strong>Key Theorems:</strong> Theorem 5.3 (Exact Strategyproofness) &amp; Theorem 5.4 (Odd-Path Condition)</td>
-                <td><strong>Empirical Scope:</strong> 3,000 random instances across p &in; {0.15, 0.25, 0.35}, 3 agents</td>
+                <td><strong>Empirical Scope:</strong> 3,000 random instances across p ∈ {0.15, 0.25, 0.35}, 3 agents</td>
             </tr>
         </table>
 
         <div class="highlight-box">
             <strong>Executive Summary &amp; Key Empirical Findings:</strong>
-            <br>&bull; <strong>Theorem 5.4 Soundness:</strong> Across all 3,000 randomized instances, there were <strong>0 false positives</strong> (no instance meeting the condition ever failed strategyproofness). Theorem 5.4 is 100% sound as a sufficient condition.
-            <br>&bull; <strong>Conservatism (Sufficiency &ne; Necessity):</strong> Exactly <strong>898 instances</strong> (29.93%) were strategyproof even though Theorem 5.4's condition failed, quantitatively proving that the absence of odd attack paths is not necessary.
-            <br>&bull; <strong>Density Impact:</strong> As edge probability <em>p</em> increases from 0.15 to 0.35, strategyproofness drops precipitously from <strong>59.20%</strong> down to <strong>13.00%</strong>.
+            <br>• <strong>Theorem 5.4 Soundness:</strong> Across all 3,000 randomized instances, there were <strong>0 false positives</strong> (no instance meeting the condition ever failed strategyproofness). Theorem 5.4 is 100% sound as a sufficient condition.
+            <br>• <strong>Conservatism (Sufficiency ≠ Necessity):</strong> Exactly <strong>898 instances</strong> (29.93%) were strategyproof even though Theorem 5.4's condition failed, quantitatively proving that the absence of odd attack paths is not necessary.
+            <br>• <strong>Density Impact:</strong> As edge probability <em>p</em> increases from 0.15 to 0.35, strategyproofness drops precipitously from <strong>59.20%</strong> down to <strong>13.00%</strong>.
         </div>
 
         <h2>1. Honest Appraisal: Is a User Interface (UI) Needed?</h2>
@@ -211,35 +211,35 @@
         <p>Building a heavyweight web UI (React/Node) creates grading friction (dependency installations, local port bindings) and diverts focus from mathematical correctness. Our project delivers an automated CLI demonstration, zero-dependency SVG vector plots, and a self-contained browser dashboard (<code>results/dashboard.html</code>), satisfying every requirement with zero setup friction.</p>
 
         <h2>2. Mathematical Formulations &amp; Classical Semantics</h2>
-        <p>An Abstract Argumentation Framework is a pair <code>AF = &langle;A, R&rangle;</code> where <code>A</code> is a finite set of arguments and <code>R &subseteq; A &times; A</code> is a directed attack relation.</p>
+        <p>An Abstract Argumentation Framework is a pair <code>AF = ⟨A, R⟩</code> where <code>A</code> is a finite set of arguments and <code>R ⊆ A × A</code> is a directed attack relation.</p>
         <ul>
-            <li><strong>Conflict-Free:</strong> <code>S &subseteq; A</code> contains no internal attacks: <code>&forall; a, b &in; S, (a, b) &notin; R</code>.</li>
-            <li><strong>Defense:</strong> <code>S</code> defends <code>a</code> iff <code>&forall; b &in; attackers[a], &exist; c &in; S</code> such that <code>(c, b) &in; R</code>.</li>
-            <li><strong>Characteristic Function:</strong> <code>F(S) = {a &in; A | S defends a}</code>. (Monotonic: <code>S_1 &subseteq; S_2 &rArr; F(S_1) &subseteq; F(S_2)</code>).</li>
+            <li><strong>Conflict-Free:</strong> <code>S ⊆ A</code> contains no internal attacks: <code>∀ a, b ∈ S, (a, b) ∉ R</code>.</li>
+            <li><strong>Defense:</strong> <code>S</code> defends <code>a</code> iff <code>∀ b ∈ attackers[a], ∃ c ∈ S</code> such that <code>(c, b) ∈ R</code>.</li>
+            <li><strong>Characteristic Function:</strong> <code>F(S) = {a ∈ A | S defends a}</code>. (Monotonic: <code>S_1 ⊆ S_2 ⇒ F(S_1) ⊆ F(S_2)</code>).</li>
             <li><strong>Complete Extension:</strong> Conflict-free fixed point: <code>S = F(S)</code>.</li>
-            <li><strong>Grounded Extension:</strong> Unique least complete extension (least fixed point of <code>F</code> via Kleene iteration from &empty;).</li>
+            <li><strong>Grounded Extension:</strong> Unique least complete extension (least fixed point of <code>F</code> via Kleene iteration from ∅).</li>
             <li><strong>Preferred Extensions:</strong> Inclusion-maximal complete extensions.</li>
-            <li><strong>Stable Extensions:</strong> Conflict-free sets attacking every outside argument: <code>S &cup; S^+ = A</code>. (Can be empty).</li>
-            <li><strong>Semi-Stable Extensions:</strong> Complete extensions whose range <code>S &cup; S^+</code> is inclusion-maximal.</li>
+            <li><strong>Stable Extensions:</strong> Conflict-free sets attacking every outside argument: <code>S ∪ S^+ = A</code>. (Can be empty).</li>
+            <li><strong>Semi-Stable Extensions:</strong> Complete extensions whose range <code>S ∪ S^+</code> is inclusion-maximal.</li>
         </ul>
 
         <h2>3. Strategic Argumentation Mechanism Design</h2>
-        <p>Agents <code>{1, 2, 3}</code> partition arguments: <code>A = A_1 &cup; A_2 &cup; A_3</code>. Each agent reveals a subset <code>R_i &subseteq; A_i</code>. The mechanism evaluates the grounded extension of the induced graph on revealed arguments:</p>
-        <p><code>g(R_1, R_2, R_3) = GE(AF[R_1 &cup; R_2 &cup; R_3])</code></p>
-        <p><em>Crucial Rule:</em> When an argument is withheld, all incident attack edges disappear from the graph. The agent's utility is evaluated against its true owned arguments: <code>u_i = |A_i &cap; g(R)|</code>.</p>
+        <p>Agents <code>{1, 2, 3}</code> partition arguments: <code>A = A_1 ∪ A_2 ∪ A_3</code>. Each agent reveals a subset <code>R_i ⊆ A_i</code>. The mechanism evaluates the grounded extension of the induced graph on revealed arguments:</p>
+        <p><code>g(R_1, R_2, R_3) = GE(AF[R_1 ∪ R_2 ∪ R_3])</code></p>
+        <p><em>Crucial Rule:</em> When an argument is withheld, all incident attack edges disappear from the graph. The agent's utility is evaluated against its true owned arguments: <code>u_i = |A_i ∩ g(R)|</code>.</p>
 
         <div class="warning-box">
             <strong>Textbook Misprints Clarifications (Page 2 of Assignment PDF):</strong>
-            <br>&bull; <strong>Example 5.10:</strong> The utilities of agents <em>y</em> and <em>z</em> were accidentally swapped in the textbook text. Correct truthful utilities are <code>u_Y = 0</code> and <code>u_Z = 1</code>.
-            <br>&bull; <strong>Discussion after Example 5.11:</strong> The argument cancelling indirect self-defeat is correctly identified as <strong>&alpha;<sub>6</sub></strong>, not &alpha;<sub>5</sub>.
+            <br>• <strong>Example 5.10:</strong> The utilities of agents <em>y</em> and <em>z</em> were accidentally swapped in the textbook text. Correct truthful utilities are <code>u_Y = 0</code> and <code>u_Z = 1</code>.
+            <br>• <strong>Discussion after Example 5.11:</strong> The argument cancelling indirect self-defeat is correctly identified as <strong>α<sub>6</sub></strong>, not α<sub>5</sub>.
         </div>
 
         <h2>4. Theoretical Conditions: Theorem 5.3 vs. Theorem 5.4</h2>
         <p><strong>Theorem 5.3 (Exact Strategyproofness):</strong> A mechanism is strategyproof iff truthful disclosure is a weak dominant strategy against every possible report profile of other agents:
-        <code>&forall; i, &forall; R_{-i}, &forall; S_i &subseteq; A_i: u_i(A_i, R_{-i}) &ge; u_i(S_i, R_{-i})</code>.</p>
+        <code>∀ i, ∀ R_{-i}, ∀ S_i ⊆ A_i: u_i(A_i, R_{-i}) ≥ u_i(S_i, R_{-i})</code>.</p>
 
-        <p><strong>Theorem 5.4 (Odd-Path Structural Condition):</strong> If no agent owns two arguments &alpha;, &beta; connected by an odd-length directed path in the full graph, the mechanism is strategyproof.</p>
-        <p><em>Handling Cycles:</em> We employ a 2-state parity BFS <code>(vertex, parity) &in; A &times; {0, 1}</code>. Self-attacks (&alpha; &rarr; &alpha;) are handled as odd paths of length 1, and odd cycles are recorded as odd self-defeats.</p>
+        <p><strong>Theorem 5.4 (Odd-Path Structural Condition):</strong> If no agent owns two arguments α, β connected by an odd-length directed path in the full graph, the mechanism is strategyproof.</p>
+        <p><em>Handling Cycles:</em> We employ a 2-state parity BFS <code>(vertex, parity) ∈ A × {0, 1}</code>. Self-attacks (α → α) are handled as odd paths of length 1, and odd cycles are recorded as odd self-defeats.</p>
 
         <h2>5. Literature Pedigree, Textbook Errata Analysis &amp; Canonical Benchmarks</h2>
         <p>The theoretical framework and numbered theorems in this assignment directly trace to <strong>Yoav Shoham &amp; Kevin Leyton-Brown (2009)</strong>, <em>Multiagent Systems: Algorithmic, Game-Theoretic, and Logical Foundations</em>, Cambridge University Press, specifically <strong>Chapter 5: Argumentation among Agents</strong>, and the underlying research by <strong>Iyad Rahwan &amp; Kate Larson (AAMAS 2008; IJCAI 2009)</strong>.</p>
@@ -247,30 +247,30 @@
         <p>In Chapter 5, the authors formalize Grounded Direct Argumentation Mechanisms and analyze strategic manipulability through Examples 5.10, 5.11, and Theorems 5.3 &amp; 5.4. However, the textbook contains two notable errata that our implementation mathematically resolved:</p>
 
         <h3>A. Example 5.10: Strategic Manipulation &amp; Swapped Utility Erratum</h3>
-        <p><strong>Graph Topology:</strong> <code>&alpha;<sub>1</sub> &rarr; &alpha;<sub>2</sub> &rarr; &alpha;<sub>3</sub> &rarr; &alpha;<sub>4</sub></code>, with <code>&alpha;<sub>3</sub> &rarr; &alpha;<sub>5</sub></code>.<br>
-        <strong>Agent Partition:</strong> Agent X: <code>{&alpha;<sub>1</sub>, &alpha;<sub>4</sub>, &alpha;<sub>5</sub>}</code>, Agent Y: <code>{&alpha;<sub>2</sub>}</code>, Agent Z: <code>{&alpha;<sub>3</sub>}</code>.</p>
+        <p><strong>Graph Topology:</strong> <code>α<sub>1</sub> → α<sub>2</sub> → α<sub>3</sub> → α<sub>4</sub></code>, with <code>α<sub>3</sub> → α<sub>5</sub></code>.<br>
+        <strong>Agent Partition:</strong> Agent X: <code>{α<sub>1</sub>, α<sub>4</sub>, α<sub>5</sub>}</code>, Agent Y: <code>{α<sub>2</sub>}</code>, Agent Z: <code>{α<sub>3</sub>}</code>.</p>
         
         <div class="warning-box">
             <strong>Textbook Erratum 1 (Page 2 of Assignment PDF):</strong>
             In the textbook's discussion of Example 5.10, the utilities of agents <em>y</em> and <em>z</em> were accidentally swapped in the text.
-            <br><strong>Mathematical Truth:</strong> Under truthful reporting, <code>&alpha;<sub>1</sub></code> is unattacked &rArr; accepted; <code>&alpha;<sub>1</sub></code> defeats <code>&alpha;<sub>2</sub></code> &rArr; <code>&alpha;<sub>2</sub></code> is OUT; <code>&alpha;<sub>3</sub></code> has no undefeated attackers &rArr; <code>&alpha;<sub>3</sub></code> is accepted; <code>&alpha;<sub>3</sub></code> defeats <code>&alpha;<sub>4</sub>, &alpha;<sub>5</sub></code>.
-            <br>&rArr; Outcome: <code>GE = {&alpha;<sub>1</sub>, &alpha;<sub>3</sub>}</code>.
-            <br>&rArr; Correct utilities: <strong>u<sub>X</sub> = 1, u<sub>Y</sub> = 0, u<sub>Z</sub> = 1</strong>. (Agent Y's argument is defeated; Agent Z's argument is accepted).
+            <br><strong>Mathematical Truth:</strong> Under truthful reporting, <code>α<sub>1</sub></code> is unattacked ⇒ accepted; <code>α<sub>1</sub></code> defeats <code>α<sub>2</sub></code> ⇒ <code>α<sub>2</sub></code> is OUT; <code>α<sub>3</sub></code> has no undefeated attackers ⇒ <code>α<sub>3</sub></code> is accepted; <code>α<sub>3</sub></code> defeats <code>α<sub>4</sub>, α<sub>5</sub></code>.
+            <br>⇒ Outcome: <code>GE = {α<sub>1</sub>, α<sub>3</sub>}</code>.
+            <br>⇒ Correct utilities: <strong>u<sub>X</sub> = 1, u<sub>Y</sub> = 0, u<sub>Z</sub> = 1</strong>. (Agent Y's argument is defeated; Agent Z's argument is accepted).
         </div>
 
         <h3>B. Example 5.11: Strategic Manipulation Walkthrough</h3>
-        <p>Agent X strategically conceals <code>&alpha;<sub>1</sub></code>, revealing only <code>{&alpha;<sub>4</sub>, &alpha;<sub>5</sub>}</code>. In the induced graph <code>AF[{&alpha;<sub>2</sub>, &alpha;<sub>3</sub>, &alpha;<sub>4</sub>, &alpha;<sub>5</sub>}]</code>, argument <code>&alpha;<sub>2</sub></code> becomes unattacked and accepted, defeating <code>&alpha;<sub>3</sub></code>, which allows <code>&alpha;<sub>4</sub></code> and <code>&alpha;<sub>5</sub></code> to be accepted. Outcome: <code>GE = {&alpha;<sub>2</sub>, &alpha;<sub>4</sub>, &alpha;<sub>5</sub>}</code>. Agent X's utility strictly increases from <strong>1 to 2</strong>! Hence, the grounded mechanism is manipulable.</p>
+        <p>Agent X strategically conceals <code>α<sub>1</sub></code>, revealing only <code>{α<sub>4</sub>, α<sub>5</sub>}</code>. In the induced graph <code>AF[{α<sub>2</sub>, α<sub>3</sub>, α<sub>4</sub>, α<sub>5</sub>}]</code>, argument <code>α<sub>2</sub></code> becomes unattacked and accepted, defeating <code>α<sub>3</sub></code>, which allows <code>α<sub>4</sub></code> and <code>α<sub>5</sub></code> to be accepted. Outcome: <code>GE = {α<sub>2</sub>, α<sub>4</sub>, α<sub>5</sub>}</code>. Agent X's utility strictly increases from <strong>1 to 2</strong>! Hence, the grounded mechanism is manipulable.</p>
 
-        <h3>C. Discussion after Example 5.11: The &alpha;<sub>6</sub> Protecting Argument Erratum</h3>
-        <p>The authors investigated whether an odd-length attack path (indirect self-defeat) is a <em>necessary</em> condition for manipulation. They constructed a counterexample to necessity by giving Agent X an unattacked argument that defeats <code>&alpha;<sub>3</sub></code>.</p>
+        <h3>C. Discussion after Example 5.11: The α<sub>6</sub> Protecting Argument Erratum</h3>
+        <p>The authors investigated whether an odd-length attack path (indirect self-defeat) is a <em>necessary</em> condition for manipulation. They constructed a counterexample to necessity by giving Agent X an unattacked argument that defeats <code>α<sub>3</sub></code>.</p>
 
         <div class="warning-box">
             <strong>Textbook Erratum 2 (Page 2 of Assignment PDF):</strong>
-            The textbook text accidentally refers to this new argument as <code>&alpha;<sub>5</sub></code>. However, <code>&alpha;<sub>5</sub></code> already exists as an argument owned by X that is attacked by <code>&alpha;<sub>3</sub></code>.
-            <br><strong>Mathematical Resolution:</strong> The proper protecting argument is a new argument <strong>&alpha;<sub>6</sub></strong> owned by Agent X with directed attack <code>&alpha;<sub>6</sub> &rarr; &alpha;<sub>3</sub></code>.
-            <br>&rArr; Because <code>&alpha;<sub>6</sub></code> is unattacked, under truthfulness it is unconditionally accepted, defeating <code>&alpha;<sub>3</sub></code> and protecting both <code>&alpha;<sub>4</sub></code> and <code>&alpha;<sub>5</sub></code>.
-            <br>&rArr; Agent X achieves utility <strong>u<sub>X</sub> = 4</strong> (all 4 owned arguments accepted). Since Agent X cannot achieve &gt; 4, truthfulness is a dominant strategy.
-            <br>&rArr; <strong>Significance:</strong> The odd path <code>&alpha;<sub>1</sub> &rarr; &alpha;<sub>2</sub> &rarr; &alpha;<sub>3</sub> &rarr; &alpha;<sub>4</sub></code> (len 3) still exists in the graph, so Theorem 5.4 fails. Yet the mechanism IS strategyproof. This formally proves that Theorem 5.4 is <strong>sufficient, but NOT necessary</strong>!
+            The textbook text accidentally refers to this new argument as <code>α<sub>5</sub></code>. However, <code>α<sub>5</sub></code> already exists as an argument owned by X that is attacked by <code>α<sub>3</sub></code>.
+            <br><strong>Mathematical Resolution:</strong> The proper protecting argument is a new argument <strong>α<sub>6</sub></strong> owned by Agent X with directed attack <code>α<sub>6</sub> → α<sub>3</sub></code>.
+            <br>⇒ Because <code>α<sub>6</sub></code> is unattacked, under truthfulness it is unconditionally accepted, defeating <code>α<sub>3</sub></code> and protecting both <code>α<sub>4</sub></code> and <code>α<sub>5</sub></code>.
+            <br>⇒ Agent X achieves utility <strong>u<sub>X</sub> = 4</strong> (all 4 owned arguments accepted). Since Agent X cannot achieve &gt; 4, truthfulness is a dominant strategy.
+            <br>⇒ <strong>Significance:</strong> The odd path <code>α<sub>1</sub> → α<sub>2</sub> → α<sub>3</sub> → α<sub>4</sub></code> (len 3) still exists in the graph, so Theorem 5.4 fails. Yet the mechanism IS strategyproof. This formally proves that Theorem 5.4 is <strong>sufficient, but NOT necessary</strong>!
         </div>
 
         <table>
@@ -287,25 +287,25 @@
             <tbody>
                 <tr>
                     <td><strong>Example 5.10</strong><br>(Rahwan &amp; Larson)</td>
-                    <td>1 &rarr; 2 &rarr; 3 &rarr; 4, 3 &rarr; 5<br>X:{1,4,5}, Y:{2}, Z:{3}</td>
+                    <td>1 → 2 → 3 → 4, 3 → 5<br>X:{1,4,5}, Y:{2}, Z:{3}</td>
                     <td>GE = {1, 3}<br>u_X=1, u_Y=0, u_Z=1</td>
-                    <td><strong>False</strong> (Not SP)<br>X hides 1 &rArr; u_X=2</td>
-                    <td><strong>False</strong><br>Odd path: 1 &rarr; 4 (len 3)</td>
+                    <td><strong>False</strong> (Not SP)<br>X hides 1 ⇒ u_X=2</td>
+                    <td><strong>False</strong><br>Odd path: 1 → 4 (len 3)</td>
                     <td>Demonstrates manipulation; resolves swapped utility misprint.</td>
                 </tr>
                 <tr>
                     <td><strong>Example 5.11 Extended</strong><br>(Protected Defeat)</td>
-                    <td>Adds unattacked 6 &rarr; 3<br>X:{1,4,5,6}, Y:{2}, Z:{3}</td>
+                    <td>Adds unattacked 6 → 3<br>X:{1,4,5,6}, Y:{2}, Z:{3}</td>
                     <td>GE = {1, 4, 5, 6}<br>u_X=4, u_Y=0, u_Z=0</td>
                     <td><strong>True (Strategyproof!)</strong><br>u_X=4 (maximum possible)</td>
-                    <td><strong>False</strong><br>Odd path 1 &rarr; 4 exists</td>
-                    <td><strong>Resolves &alpha;<sub>6</sub> misprint; proves Thm 5.4 is sufficient, not necessary!</strong></td>
+                    <td><strong>False</strong><br>Odd path 1 → 4 exists</td>
+                    <td><strong>Resolves α<sub>6</sub> misprint; proves Thm 5.4 is sufficient, not necessary!</strong></td>
                 </tr>
             </tbody>
         </table>
 
         <h2>6. Empirical Benchmark Results (3,000 Random Instances)</h2>
-        <p>We executed 3,000 randomized experiments across 3 agents, <em>n</em> &in; [6, 8] arguments, and attack probabilities <em>p</em> &in; {0.15, 0.25, 0.35}:</p>
+        <p>We executed 3,000 randomized experiments across 3 agents, <em>n</em> ∈ [6, 8] arguments, and attack probabilities <em>p</em> ∈ {0.15, 0.25, 0.35}:</p>
 
         <table>
             <thead>
@@ -366,10 +366,10 @@
 
         <h2>7. Visual Charts</h2>
         <div class="center-img">
-            <object data="results/strategyproof_comparison.svg" type="image/svg+xml" width="100%"></object>
+            <img src="results/strategyproof_comparison.svg" alt="Strategyproof Comparison Chart" style="width: 100%; max-width: 800px; height: auto;" />
         </div>
         <div class="center-img">
-            <object data="results/outcomes_breakdown.svg" type="image/svg+xml" width="100%"></object>
+            <img src="results/outcomes_breakdown.svg" alt="Category Breakdown Chart" style="width: 100%; max-width: 800px; height: auto;" />
         </div>
 
         <h2>8. Answers to Required Assignment Questions</h2>
@@ -380,7 +380,7 @@
         <p><strong>Exactly 0 instances</strong> across all 3,000 runs. This empirically proves the mathematical soundness of Theorem 5.4 as a sufficient condition.</p>
 
         <h3>3. Instances strategyproof although the condition fails:</h3>
-        <p><strong>898 instances</strong> (29.93% of the total). These arise due to protective arguments (like &alpha;<sub>6</sub> in Example 5.11), external defeating arguments from competing agents, or deviations that fail to generate marginal utility for the manipulator.</p>
+        <p><strong>898 instances</strong> (29.93% of the total). These arise due to protective arguments (like α<sub>6</sub> in Example 5.11), external defeating arguments from competing agents, or deviations that fail to generate marginal utility for the manipulator.</p>
 
         <h2>9. Submission &amp; Verification Checklist</h2>
         <ul>
