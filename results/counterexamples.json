@@ -1,0 +1,3865 @@
+{
+  "manipulation_witnesses": [
+    {
+      "instance_id": 3,
+      "p": 0.15,
+      "n": 8,
+      "seed": 45,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a3"
+          ],
+          [
+            "a1",
+            "a5"
+          ],
+          [
+            "a1",
+            "a6"
+          ],
+          [
+            "a1",
+            "a8"
+          ],
+          [
+            "a2",
+            "a3"
+          ],
+          [
+            "a2",
+            "a5"
+          ],
+          [
+            "a3",
+            "a3"
+          ],
+          [
+            "a4",
+            "a3"
+          ],
+          [
+            "a4",
+            "a4"
+          ],
+          [
+            "a5",
+            "a8"
+          ],
+          [
+            "a6",
+            "a5"
+          ],
+          [
+            "a7",
+            "a3"
+          ],
+          [
+            "a7",
+            "a5"
+          ],
+          [
+            "a8",
+            "a1"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a1",
+          "a5",
+          "a6"
+        ],
+        "agent_2": [
+          "a7",
+          "a8"
+        ],
+        "agent_3": [
+          "a2",
+          "a3",
+          "a4"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_1",
+        "A_i": [
+          "a1",
+          "a5",
+          "a6"
+        ],
+        "other_reports": {
+          "agent_2": [
+            "a8"
+          ],
+          "agent_3": []
+        },
+        "truthful_report": [
+          "a1",
+          "a5",
+          "a6"
+        ],
+        "deviation_report": [
+          "a5"
+        ],
+        "hidden_arguments": [
+          "a1",
+          "a6"
+        ],
+        "truthful_utility": 0,
+        "deviation_utility": 1,
+        "truthful_outcome": [],
+        "deviation_outcome": [
+          "a5"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a1",
+        "beta": "a1",
+        "path": [
+          "a1",
+          "a5",
+          "a8",
+          "a1"
+        ],
+        "length": 3,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 4,
+      "p": 0.15,
+      "n": 6,
+      "seed": 46,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "attacks": [
+          [
+            "a2",
+            "a3"
+          ],
+          [
+            "a2",
+            "a4"
+          ],
+          [
+            "a3",
+            "a2"
+          ],
+          [
+            "a4",
+            "a1"
+          ],
+          [
+            "a4",
+            "a6"
+          ],
+          [
+            "a5",
+            "a3"
+          ],
+          [
+            "a6",
+            "a2"
+          ],
+          [
+            "a6",
+            "a4"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a1",
+          "a2",
+          "a3"
+        ],
+        "agent_2": [
+          "a4",
+          "a5"
+        ],
+        "agent_3": [
+          "a6"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_1",
+        "A_i": [
+          "a1",
+          "a2",
+          "a3"
+        ],
+        "other_reports": {
+          "agent_2": [],
+          "agent_3": []
+        },
+        "truthful_report": [
+          "a1",
+          "a2",
+          "a3"
+        ],
+        "deviation_report": [
+          "a1",
+          "a2"
+        ],
+        "hidden_arguments": [
+          "a3"
+        ],
+        "truthful_utility": 1,
+        "deviation_utility": 2,
+        "truthful_outcome": [
+          "a1"
+        ],
+        "deviation_outcome": [
+          "a1",
+          "a2"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a2",
+        "beta": "a1",
+        "path": [
+          "a2",
+          "a4",
+          "a6",
+          "a2",
+          "a4",
+          "a1"
+        ],
+        "length": 5,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 5,
+      "p": 0.15,
+      "n": 7,
+      "seed": 47,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a7"
+          ],
+          [
+            "a2",
+            "a2"
+          ],
+          [
+            "a2",
+            "a3"
+          ],
+          [
+            "a4",
+            "a1"
+          ],
+          [
+            "a5",
+            "a3"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a4",
+          "a5"
+        ],
+        "agent_2": [
+          "a2",
+          "a3"
+        ],
+        "agent_3": [
+          "a1",
+          "a6",
+          "a7"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_2",
+        "A_i": [
+          "a2",
+          "a3"
+        ],
+        "other_reports": {
+          "agent_1": [],
+          "agent_3": []
+        },
+        "truthful_report": [
+          "a2",
+          "a3"
+        ],
+        "deviation_report": [
+          "a3"
+        ],
+        "hidden_arguments": [
+          "a2"
+        ],
+        "truthful_utility": 0,
+        "deviation_utility": 1,
+        "truthful_outcome": [],
+        "deviation_outcome": [
+          "a3"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_2",
+        "alpha": "a2",
+        "beta": "a2",
+        "path": [
+          "a2",
+          "a2"
+        ],
+        "length": 1,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 6,
+      "p": 0.15,
+      "n": 8,
+      "seed": 48,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a2"
+          ],
+          [
+            "a2",
+            "a3"
+          ],
+          [
+            "a3",
+            "a2"
+          ],
+          [
+            "a3",
+            "a3"
+          ],
+          [
+            "a3",
+            "a6"
+          ],
+          [
+            "a5",
+            "a1"
+          ],
+          [
+            "a6",
+            "a4"
+          ],
+          [
+            "a6",
+            "a5"
+          ],
+          [
+            "a6",
+            "a6"
+          ],
+          [
+            "a7",
+            "a7"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a2",
+          "a4",
+          "a5",
+          "a6",
+          "a8"
+        ],
+        "agent_2": [
+          "a1"
+        ],
+        "agent_3": [
+          "a3",
+          "a7"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_1",
+        "A_i": [
+          "a2",
+          "a4",
+          "a5",
+          "a6",
+          "a8"
+        ],
+        "other_reports": {
+          "agent_2": [],
+          "agent_3": []
+        },
+        "truthful_report": [
+          "a2",
+          "a4",
+          "a5",
+          "a6",
+          "a8"
+        ],
+        "deviation_report": [
+          "a2",
+          "a4",
+          "a8"
+        ],
+        "hidden_arguments": [
+          "a5",
+          "a6"
+        ],
+        "truthful_utility": 2,
+        "deviation_utility": 3,
+        "truthful_outcome": [
+          "a2",
+          "a8"
+        ],
+        "deviation_outcome": [
+          "a2",
+          "a4",
+          "a8"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a2",
+        "beta": "a4",
+        "path": [
+          "a2",
+          "a3",
+          "a6",
+          "a4"
+        ],
+        "length": 3,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 14,
+      "p": 0.15,
+      "n": 7,
+      "seed": 56,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7"
+        ],
+        "attacks": [
+          [
+            "a2",
+            "a3"
+          ],
+          [
+            "a3",
+            "a5"
+          ],
+          [
+            "a4",
+            "a6"
+          ],
+          [
+            "a5",
+            "a1"
+          ],
+          [
+            "a5",
+            "a5"
+          ],
+          [
+            "a6",
+            "a1"
+          ],
+          [
+            "a6",
+            "a4"
+          ],
+          [
+            "a6",
+            "a6"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a6"
+        ],
+        "agent_2": [
+          "a1",
+          "a2",
+          "a3",
+          "a5",
+          "a7"
+        ],
+        "agent_3": [
+          "a4"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_2",
+        "A_i": [
+          "a1",
+          "a2",
+          "a3",
+          "a5",
+          "a7"
+        ],
+        "other_reports": {
+          "agent_1": [],
+          "agent_3": []
+        },
+        "truthful_report": [
+          "a1",
+          "a2",
+          "a3",
+          "a5",
+          "a7"
+        ],
+        "deviation_report": [
+          "a1",
+          "a3",
+          "a7"
+        ],
+        "hidden_arguments": [
+          "a2",
+          "a5"
+        ],
+        "truthful_utility": 2,
+        "deviation_utility": 3,
+        "truthful_outcome": [
+          "a2",
+          "a7"
+        ],
+        "deviation_outcome": [
+          "a1",
+          "a3",
+          "a7"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a6",
+        "beta": "a6",
+        "path": [
+          "a6",
+          "a6"
+        ],
+        "length": 1,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 15,
+      "p": 0.15,
+      "n": 8,
+      "seed": 57,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a1"
+          ],
+          [
+            "a1",
+            "a3"
+          ],
+          [
+            "a2",
+            "a2"
+          ],
+          [
+            "a3",
+            "a7"
+          ],
+          [
+            "a6",
+            "a1"
+          ],
+          [
+            "a6",
+            "a4"
+          ],
+          [
+            "a7",
+            "a7"
+          ],
+          [
+            "a8",
+            "a5"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a2",
+          "a8"
+        ],
+        "agent_2": [
+          "a1",
+          "a3",
+          "a5"
+        ],
+        "agent_3": [
+          "a4",
+          "a6",
+          "a7"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_2",
+        "A_i": [
+          "a1",
+          "a3",
+          "a5"
+        ],
+        "other_reports": {
+          "agent_1": [],
+          "agent_3": []
+        },
+        "truthful_report": [
+          "a1",
+          "a3",
+          "a5"
+        ],
+        "deviation_report": [
+          "a3",
+          "a5"
+        ],
+        "hidden_arguments": [
+          "a1"
+        ],
+        "truthful_utility": 1,
+        "deviation_utility": 2,
+        "truthful_outcome": [
+          "a5"
+        ],
+        "deviation_outcome": [
+          "a3",
+          "a5"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a2",
+        "beta": "a2",
+        "path": [
+          "a2",
+          "a2"
+        ],
+        "length": 1,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 17,
+      "p": 0.15,
+      "n": 7,
+      "seed": 59,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a4"
+          ],
+          [
+            "a2",
+            "a1"
+          ],
+          [
+            "a3",
+            "a6"
+          ],
+          [
+            "a4",
+            "a3"
+          ],
+          [
+            "a5",
+            "a1"
+          ],
+          [
+            "a5",
+            "a5"
+          ],
+          [
+            "a5",
+            "a7"
+          ],
+          [
+            "a7",
+            "a5"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a2",
+          "a4",
+          "a6",
+          "a7"
+        ],
+        "agent_2": [
+          "a3"
+        ],
+        "agent_3": [
+          "a1",
+          "a5"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_3",
+        "A_i": [
+          "a1",
+          "a5"
+        ],
+        "other_reports": {
+          "agent_1": [],
+          "agent_2": []
+        },
+        "truthful_report": [
+          "a1",
+          "a5"
+        ],
+        "deviation_report": [
+          "a1"
+        ],
+        "hidden_arguments": [
+          "a5"
+        ],
+        "truthful_utility": 0,
+        "deviation_utility": 1,
+        "truthful_outcome": [],
+        "deviation_outcome": [
+          "a1"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a7",
+        "beta": "a4",
+        "path": [
+          "a7",
+          "a5",
+          "a1",
+          "a4"
+        ],
+        "length": 3,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 21,
+      "p": 0.15,
+      "n": 8,
+      "seed": 63,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a5"
+          ],
+          [
+            "a1",
+            "a7"
+          ],
+          [
+            "a2",
+            "a1"
+          ],
+          [
+            "a4",
+            "a6"
+          ],
+          [
+            "a5",
+            "a2"
+          ],
+          [
+            "a6",
+            "a4"
+          ],
+          [
+            "a7",
+            "a8"
+          ],
+          [
+            "a8",
+            "a6"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a1",
+          "a4",
+          "a5"
+        ],
+        "agent_2": [
+          "a3",
+          "a7"
+        ],
+        "agent_3": [
+          "a2",
+          "a6",
+          "a8"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_1",
+        "A_i": [
+          "a1",
+          "a4",
+          "a5"
+        ],
+        "other_reports": {
+          "agent_2": [],
+          "agent_3": [
+            "a2"
+          ]
+        },
+        "truthful_report": [
+          "a1",
+          "a4",
+          "a5"
+        ],
+        "deviation_report": [
+          "a4",
+          "a5"
+        ],
+        "hidden_arguments": [
+          "a1"
+        ],
+        "truthful_utility": 1,
+        "deviation_utility": 2,
+        "truthful_outcome": [
+          "a4"
+        ],
+        "deviation_outcome": [
+          "a4",
+          "a5"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a1",
+        "beta": "a1",
+        "path": [
+          "a1",
+          "a5",
+          "a2",
+          "a1"
+        ],
+        "length": 3,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 22,
+      "p": 0.15,
+      "n": 6,
+      "seed": 64,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a5"
+          ],
+          [
+            "a3",
+            "a1"
+          ],
+          [
+            "a3",
+            "a5"
+          ],
+          [
+            "a4",
+            "a1"
+          ],
+          [
+            "a4",
+            "a2"
+          ],
+          [
+            "a4",
+            "a3"
+          ],
+          [
+            "a4",
+            "a4"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a2"
+        ],
+        "agent_2": [
+          "a1"
+        ],
+        "agent_3": [
+          "a3",
+          "a4",
+          "a5",
+          "a6"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_3",
+        "A_i": [
+          "a3",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "other_reports": {
+          "agent_1": [],
+          "agent_2": []
+        },
+        "truthful_report": [
+          "a3",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "deviation_report": [
+          "a5",
+          "a6"
+        ],
+        "hidden_arguments": [
+          "a3",
+          "a4"
+        ],
+        "truthful_utility": 1,
+        "deviation_utility": 2,
+        "truthful_outcome": [
+          "a6"
+        ],
+        "deviation_outcome": [
+          "a5",
+          "a6"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_3",
+        "alpha": "a4",
+        "beta": "a4",
+        "path": [
+          "a4",
+          "a4"
+        ],
+        "length": 1,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 23,
+      "p": 0.15,
+      "n": 7,
+      "seed": 65,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7"
+        ],
+        "attacks": [
+          [
+            "a2",
+            "a3"
+          ],
+          [
+            "a3",
+            "a1"
+          ],
+          [
+            "a3",
+            "a2"
+          ],
+          [
+            "a3",
+            "a7"
+          ],
+          [
+            "a6",
+            "a6"
+          ],
+          [
+            "a7",
+            "a4"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a4",
+          "a7"
+        ],
+        "agent_2": [
+          "a2",
+          "a5"
+        ],
+        "agent_3": [
+          "a1",
+          "a3",
+          "a6"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_1",
+        "A_i": [
+          "a4",
+          "a7"
+        ],
+        "other_reports": {
+          "agent_2": [
+            "a2"
+          ],
+          "agent_3": [
+            "a3"
+          ]
+        },
+        "truthful_report": [
+          "a4",
+          "a7"
+        ],
+        "deviation_report": [
+          "a4"
+        ],
+        "hidden_arguments": [
+          "a7"
+        ],
+        "truthful_utility": 0,
+        "deviation_utility": 1,
+        "truthful_outcome": [],
+        "deviation_outcome": [
+          "a4"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a7",
+        "beta": "a4",
+        "path": [
+          "a7",
+          "a4"
+        ],
+        "length": 1,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 24,
+      "p": 0.15,
+      "n": 8,
+      "seed": 66,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a1"
+          ],
+          [
+            "a2",
+            "a4"
+          ],
+          [
+            "a2",
+            "a6"
+          ],
+          [
+            "a6",
+            "a1"
+          ],
+          [
+            "a6",
+            "a2"
+          ],
+          [
+            "a6",
+            "a7"
+          ],
+          [
+            "a8",
+            "a7"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a3",
+          "a7"
+        ],
+        "agent_2": [
+          "a1",
+          "a2",
+          "a4",
+          "a6"
+        ],
+        "agent_3": [
+          "a5",
+          "a8"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_2",
+        "A_i": [
+          "a1",
+          "a2",
+          "a4",
+          "a6"
+        ],
+        "other_reports": {
+          "agent_1": [],
+          "agent_3": []
+        },
+        "truthful_report": [
+          "a1",
+          "a2",
+          "a4",
+          "a6"
+        ],
+        "deviation_report": [
+          "a4"
+        ],
+        "hidden_arguments": [
+          "a1",
+          "a2",
+          "a6"
+        ],
+        "truthful_utility": 0,
+        "deviation_utility": 1,
+        "truthful_outcome": [],
+        "deviation_outcome": [
+          "a4"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_2",
+        "alpha": "a2",
+        "beta": "a4",
+        "path": [
+          "a2",
+          "a4"
+        ],
+        "length": 1,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 25,
+      "p": 0.15,
+      "n": 6,
+      "seed": 67,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a1"
+          ],
+          [
+            "a2",
+            "a4"
+          ],
+          [
+            "a2",
+            "a6"
+          ],
+          [
+            "a3",
+            "a2"
+          ],
+          [
+            "a3",
+            "a3"
+          ],
+          [
+            "a4",
+            "a1"
+          ],
+          [
+            "a5",
+            "a2"
+          ],
+          [
+            "a6",
+            "a3"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a1",
+          "a3",
+          "a4"
+        ],
+        "agent_2": [
+          "a5"
+        ],
+        "agent_3": [
+          "a2",
+          "a6"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_3",
+        "A_i": [
+          "a2",
+          "a6"
+        ],
+        "other_reports": {
+          "agent_1": [
+            "a3"
+          ],
+          "agent_2": []
+        },
+        "truthful_report": [
+          "a2",
+          "a6"
+        ],
+        "deviation_report": [
+          "a6"
+        ],
+        "hidden_arguments": [
+          "a2"
+        ],
+        "truthful_utility": 0,
+        "deviation_utility": 1,
+        "truthful_outcome": [],
+        "deviation_outcome": [
+          "a6"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a4",
+        "beta": "a1",
+        "path": [
+          "a4",
+          "a1"
+        ],
+        "length": 1,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 28,
+      "p": 0.15,
+      "n": 6,
+      "seed": 70,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a4"
+          ],
+          [
+            "a3",
+            "a1"
+          ],
+          [
+            "a3",
+            "a6"
+          ],
+          [
+            "a4",
+            "a1"
+          ],
+          [
+            "a4",
+            "a4"
+          ],
+          [
+            "a5",
+            "a1"
+          ],
+          [
+            "a5",
+            "a5"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a1",
+          "a4",
+          "a5"
+        ],
+        "agent_2": [
+          "a2"
+        ],
+        "agent_3": [
+          "a3",
+          "a6"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_1",
+        "A_i": [
+          "a1",
+          "a4",
+          "a5"
+        ],
+        "other_reports": {
+          "agent_2": [],
+          "agent_3": []
+        },
+        "truthful_report": [
+          "a1",
+          "a4",
+          "a5"
+        ],
+        "deviation_report": [
+          "a1"
+        ],
+        "hidden_arguments": [
+          "a4",
+          "a5"
+        ],
+        "truthful_utility": 0,
+        "deviation_utility": 1,
+        "truthful_outcome": [],
+        "deviation_outcome": [
+          "a1"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a4",
+        "beta": "a4",
+        "path": [
+          "a4",
+          "a4"
+        ],
+        "length": 1,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 29,
+      "p": 0.15,
+      "n": 7,
+      "seed": 71,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a3"
+          ],
+          [
+            "a2",
+            "a2"
+          ],
+          [
+            "a2",
+            "a4"
+          ],
+          [
+            "a3",
+            "a5"
+          ],
+          [
+            "a4",
+            "a1"
+          ],
+          [
+            "a5",
+            "a1"
+          ],
+          [
+            "a5",
+            "a6"
+          ],
+          [
+            "a6",
+            "a2"
+          ],
+          [
+            "a7",
+            "a3"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a5",
+          "a7"
+        ],
+        "agent_2": [
+          "a1"
+        ],
+        "agent_3": [
+          "a2",
+          "a3",
+          "a4",
+          "a6"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_3",
+        "A_i": [
+          "a2",
+          "a3",
+          "a4",
+          "a6"
+        ],
+        "other_reports": {
+          "agent_1": [
+            "a5"
+          ],
+          "agent_2": [
+            "a1"
+          ]
+        },
+        "truthful_report": [
+          "a2",
+          "a3",
+          "a4",
+          "a6"
+        ],
+        "deviation_report": [
+          "a4"
+        ],
+        "hidden_arguments": [
+          "a2",
+          "a3",
+          "a6"
+        ],
+        "truthful_utility": 0,
+        "deviation_utility": 1,
+        "truthful_outcome": [],
+        "deviation_outcome": [
+          "a4",
+          "a5"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a7",
+        "beta": "a5",
+        "path": [
+          "a7",
+          "a3",
+          "a5",
+          "a1",
+          "a3",
+          "a5"
+        ],
+        "length": 5,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 33,
+      "p": 0.15,
+      "n": 8,
+      "seed": 75,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a3"
+          ],
+          [
+            "a2",
+            "a6"
+          ],
+          [
+            "a3",
+            "a5"
+          ],
+          [
+            "a4",
+            "a2"
+          ],
+          [
+            "a5",
+            "a2"
+          ],
+          [
+            "a5",
+            "a3"
+          ],
+          [
+            "a5",
+            "a5"
+          ],
+          [
+            "a5",
+            "a7"
+          ],
+          [
+            "a6",
+            "a2"
+          ],
+          [
+            "a7",
+            "a6"
+          ],
+          [
+            "a8",
+            "a3"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a4",
+          "a6",
+          "a8"
+        ],
+        "agent_2": [
+          "a2"
+        ],
+        "agent_3": [
+          "a1",
+          "a3",
+          "a5",
+          "a7"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_3",
+        "A_i": [
+          "a1",
+          "a3",
+          "a5",
+          "a7"
+        ],
+        "other_reports": {
+          "agent_1": [],
+          "agent_2": []
+        },
+        "truthful_report": [
+          "a1",
+          "a3",
+          "a5",
+          "a7"
+        ],
+        "deviation_report": [
+          "a1",
+          "a7"
+        ],
+        "hidden_arguments": [
+          "a3",
+          "a5"
+        ],
+        "truthful_utility": 1,
+        "deviation_utility": 2,
+        "truthful_outcome": [
+          "a1"
+        ],
+        "deviation_outcome": [
+          "a1",
+          "a7"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a8",
+        "beta": "a6",
+        "path": [
+          "a8",
+          "a3",
+          "a5",
+          "a5",
+          "a7",
+          "a6"
+        ],
+        "length": 5,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 35,
+      "p": 0.15,
+      "n": 7,
+      "seed": 77,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a5"
+          ],
+          [
+            "a2",
+            "a2"
+          ],
+          [
+            "a2",
+            "a6"
+          ],
+          [
+            "a3",
+            "a7"
+          ],
+          [
+            "a4",
+            "a5"
+          ],
+          [
+            "a5",
+            "a3"
+          ],
+          [
+            "a6",
+            "a2"
+          ],
+          [
+            "a6",
+            "a4"
+          ],
+          [
+            "a6",
+            "a7"
+          ],
+          [
+            "a7",
+            "a4"
+          ],
+          [
+            "a7",
+            "a6"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a4",
+          "a7"
+        ],
+        "agent_2": [
+          "a2",
+          "a6"
+        ],
+        "agent_3": [
+          "a1",
+          "a3",
+          "a5"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_1",
+        "A_i": [
+          "a4",
+          "a7"
+        ],
+        "other_reports": {
+          "agent_2": [],
+          "agent_3": [
+            "a3",
+            "a5"
+          ]
+        },
+        "truthful_report": [
+          "a4",
+          "a7"
+        ],
+        "deviation_report": [
+          "a4"
+        ],
+        "hidden_arguments": [
+          "a7"
+        ],
+        "truthful_utility": 0,
+        "deviation_utility": 1,
+        "truthful_outcome": [],
+        "deviation_outcome": [
+          "a3",
+          "a4"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a4",
+        "beta": "a4",
+        "path": [
+          "a4",
+          "a5",
+          "a3",
+          "a7",
+          "a6",
+          "a4"
+        ],
+        "length": 5,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 39,
+      "p": 0.15,
+      "n": 8,
+      "seed": 81,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8"
+        ],
+        "attacks": [
+          [
+            "a2",
+            "a6"
+          ],
+          [
+            "a2",
+            "a7"
+          ],
+          [
+            "a5",
+            "a6"
+          ],
+          [
+            "a5",
+            "a7"
+          ],
+          [
+            "a6",
+            "a6"
+          ],
+          [
+            "a7",
+            "a4"
+          ],
+          [
+            "a7",
+            "a6"
+          ],
+          [
+            "a8",
+            "a4"
+          ],
+          [
+            "a8",
+            "a8"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a5"
+        ],
+        "agent_2": [
+          "a3",
+          "a4",
+          "a8"
+        ],
+        "agent_3": [
+          "a1",
+          "a2",
+          "a6",
+          "a7"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_2",
+        "A_i": [
+          "a3",
+          "a4",
+          "a8"
+        ],
+        "other_reports": {
+          "agent_1": [],
+          "agent_3": []
+        },
+        "truthful_report": [
+          "a3",
+          "a4",
+          "a8"
+        ],
+        "deviation_report": [
+          "a3",
+          "a4"
+        ],
+        "hidden_arguments": [
+          "a8"
+        ],
+        "truthful_utility": 1,
+        "deviation_utility": 2,
+        "truthful_outcome": [
+          "a3"
+        ],
+        "deviation_outcome": [
+          "a3",
+          "a4"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_2",
+        "alpha": "a8",
+        "beta": "a4",
+        "path": [
+          "a8",
+          "a4"
+        ],
+        "length": 1,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 42,
+      "p": 0.15,
+      "n": 8,
+      "seed": 84,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a3"
+          ],
+          [
+            "a1",
+            "a4"
+          ],
+          [
+            "a3",
+            "a3"
+          ],
+          [
+            "a3",
+            "a5"
+          ],
+          [
+            "a3",
+            "a7"
+          ],
+          [
+            "a4",
+            "a3"
+          ],
+          [
+            "a4",
+            "a7"
+          ],
+          [
+            "a4",
+            "a8"
+          ],
+          [
+            "a5",
+            "a4"
+          ],
+          [
+            "a6",
+            "a3"
+          ],
+          [
+            "a8",
+            "a1"
+          ],
+          [
+            "a8",
+            "a3"
+          ],
+          [
+            "a8",
+            "a8"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a2",
+          "a7",
+          "a8"
+        ],
+        "agent_2": [
+          "a5"
+        ],
+        "agent_3": [
+          "a1",
+          "a3",
+          "a4",
+          "a6"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_1",
+        "A_i": [
+          "a2",
+          "a7",
+          "a8"
+        ],
+        "other_reports": {
+          "agent_2": [],
+          "agent_3": [
+            "a1",
+            "a4"
+          ]
+        },
+        "truthful_report": [
+          "a2",
+          "a7",
+          "a8"
+        ],
+        "deviation_report": [
+          "a2",
+          "a7"
+        ],
+        "hidden_arguments": [
+          "a8"
+        ],
+        "truthful_utility": 1,
+        "deviation_utility": 2,
+        "truthful_outcome": [
+          "a2"
+        ],
+        "deviation_outcome": [
+          "a1",
+          "a2",
+          "a7"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a8",
+        "beta": "a7",
+        "path": [
+          "a8",
+          "a1",
+          "a4",
+          "a7"
+        ],
+        "length": 3,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 45,
+      "p": 0.15,
+      "n": 8,
+      "seed": 87,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a1"
+          ],
+          [
+            "a2",
+            "a2"
+          ],
+          [
+            "a3",
+            "a1"
+          ],
+          [
+            "a3",
+            "a6"
+          ],
+          [
+            "a3",
+            "a7"
+          ],
+          [
+            "a5",
+            "a8"
+          ],
+          [
+            "a7",
+            "a1"
+          ],
+          [
+            "a7",
+            "a3"
+          ],
+          [
+            "a7",
+            "a5"
+          ],
+          [
+            "a8",
+            "a1"
+          ],
+          [
+            "a8",
+            "a5"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a3",
+          "a7",
+          "a8"
+        ],
+        "agent_2": [
+          "a1",
+          "a5",
+          "a6"
+        ],
+        "agent_3": [
+          "a2",
+          "a4"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_1",
+        "A_i": [
+          "a3",
+          "a7",
+          "a8"
+        ],
+        "other_reports": {
+          "agent_2": [],
+          "agent_3": []
+        },
+        "truthful_report": [
+          "a3",
+          "a7",
+          "a8"
+        ],
+        "deviation_report": [
+          "a7",
+          "a8"
+        ],
+        "hidden_arguments": [
+          "a3"
+        ],
+        "truthful_utility": 1,
+        "deviation_utility": 2,
+        "truthful_outcome": [
+          "a8"
+        ],
+        "deviation_outcome": [
+          "a7",
+          "a8"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a7",
+        "beta": "a3",
+        "path": [
+          "a7",
+          "a3"
+        ],
+        "length": 1,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 46,
+      "p": 0.15,
+      "n": 6,
+      "seed": 88,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "attacks": [
+          [
+            "a2",
+            "a3"
+          ],
+          [
+            "a2",
+            "a5"
+          ],
+          [
+            "a2",
+            "a6"
+          ],
+          [
+            "a3",
+            "a4"
+          ],
+          [
+            "a4",
+            "a2"
+          ],
+          [
+            "a6",
+            "a1"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a3"
+        ],
+        "agent_2": [
+          "a1",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "agent_3": [
+          "a2"
+        ]
+      },
+      "counterexample": {
+        "agent": "agent_2",
+        "A_i": [
+          "a1",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "other_reports": {
+          "agent_1": [
+            "a3"
+          ],
+          "agent_3": [
+            "a2"
+          ]
+        },
+        "truthful_report": [
+          "a1",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "deviation_report": [
+          "a1"
+        ],
+        "hidden_arguments": [
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "truthful_utility": 0,
+        "deviation_utility": 1,
+        "truthful_outcome": [],
+        "deviation_outcome": [
+          "a1",
+          "a2"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a3",
+        "beta": "a3",
+        "path": [
+          "a3",
+          "a4",
+          "a2",
+          "a3"
+        ],
+        "length": 3,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    }
+  ],
+  "sp_despite_cond_fails_examples": [
+    {
+      "instance_id": 1,
+      "p": 0.15,
+      "n": 6,
+      "seed": 43,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a1"
+          ],
+          [
+            "a1",
+            "a3"
+          ],
+          [
+            "a2",
+            "a3"
+          ],
+          [
+            "a4",
+            "a2"
+          ],
+          [
+            "a5",
+            "a4"
+          ],
+          [
+            "a5",
+            "a5"
+          ],
+          [
+            "a6",
+            "a5"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a3",
+          "a6"
+        ],
+        "agent_2": [
+          "a1",
+          "a4"
+        ],
+        "agent_3": [
+          "a2",
+          "a5"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a6",
+        "beta": "a3",
+        "path": [
+          "a6",
+          "a5",
+          "a5",
+          "a4",
+          "a2",
+          "a3"
+        ],
+        "length": 5,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 2,
+      "p": 0.15,
+      "n": 7,
+      "seed": 44,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a6"
+          ],
+          [
+            "a1",
+            "a7"
+          ],
+          [
+            "a2",
+            "a1"
+          ],
+          [
+            "a3",
+            "a3"
+          ],
+          [
+            "a3",
+            "a6"
+          ],
+          [
+            "a3",
+            "a7"
+          ],
+          [
+            "a4",
+            "a1"
+          ],
+          [
+            "a4",
+            "a3"
+          ],
+          [
+            "a4",
+            "a6"
+          ],
+          [
+            "a5",
+            "a6"
+          ],
+          [
+            "a6",
+            "a3"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a5"
+        ],
+        "agent_2": [
+          "a2",
+          "a6",
+          "a7"
+        ],
+        "agent_3": [
+          "a1",
+          "a3",
+          "a4"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_2",
+        "alpha": "a2",
+        "beta": "a7",
+        "path": [
+          "a2",
+          "a1",
+          "a6",
+          "a3",
+          "a3",
+          "a7"
+        ],
+        "length": 5,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 7,
+      "p": 0.15,
+      "n": 6,
+      "seed": 49,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a1"
+          ],
+          [
+            "a1",
+            "a3"
+          ],
+          [
+            "a1",
+            "a6"
+          ],
+          [
+            "a2",
+            "a1"
+          ],
+          [
+            "a3",
+            "a6"
+          ],
+          [
+            "a6",
+            "a1"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a3",
+          "a4"
+        ],
+        "agent_2": [
+          "a1",
+          "a2",
+          "a5"
+        ],
+        "agent_3": [
+          "a6"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a3",
+        "beta": "a3",
+        "path": [
+          "a3",
+          "a6",
+          "a1",
+          "a3"
+        ],
+        "length": 3,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 9,
+      "p": 0.15,
+      "n": 8,
+      "seed": 51,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8"
+        ],
+        "attacks": [
+          [
+            "a3",
+            "a3"
+          ],
+          [
+            "a6",
+            "a3"
+          ],
+          [
+            "a6",
+            "a8"
+          ],
+          [
+            "a7",
+            "a6"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a7",
+          "a8"
+        ],
+        "agent_2": [
+          "a1",
+          "a2",
+          "a4",
+          "a5"
+        ],
+        "agent_3": [
+          "a3",
+          "a6"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_3",
+        "alpha": "a6",
+        "beta": "a3",
+        "path": [
+          "a6",
+          "a3"
+        ],
+        "length": 1,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 10,
+      "p": 0.15,
+      "n": 6,
+      "seed": 52,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a2"
+          ],
+          [
+            "a3",
+            "a2"
+          ],
+          [
+            "a3",
+            "a4"
+          ],
+          [
+            "a3",
+            "a5"
+          ],
+          [
+            "a6",
+            "a1"
+          ],
+          [
+            "a6",
+            "a5"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a1"
+        ],
+        "agent_2": [
+          "a2",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "agent_3": [
+          "a3"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_2",
+        "alpha": "a6",
+        "beta": "a5",
+        "path": [
+          "a6",
+          "a5"
+        ],
+        "length": 1,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 11,
+      "p": 0.15,
+      "n": 7,
+      "seed": 53,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7"
+        ],
+        "attacks": [
+          [
+            "a2",
+            "a3"
+          ],
+          [
+            "a3",
+            "a6"
+          ],
+          [
+            "a4",
+            "a5"
+          ],
+          [
+            "a4",
+            "a7"
+          ],
+          [
+            "a6",
+            "a6"
+          ],
+          [
+            "a6",
+            "a7"
+          ],
+          [
+            "a7",
+            "a3"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a2",
+          "a5",
+          "a6"
+        ],
+        "agent_2": [
+          "a7"
+        ],
+        "agent_3": [
+          "a1",
+          "a3",
+          "a4"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a2",
+        "beta": "a6",
+        "path": [
+          "a2",
+          "a3",
+          "a6",
+          "a6"
+        ],
+        "length": 3,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 12,
+      "p": 0.15,
+      "n": 8,
+      "seed": 54,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a2"
+          ],
+          [
+            "a2",
+            "a5"
+          ],
+          [
+            "a3",
+            "a5"
+          ],
+          [
+            "a4",
+            "a4"
+          ],
+          [
+            "a4",
+            "a7"
+          ],
+          [
+            "a5",
+            "a2"
+          ],
+          [
+            "a6",
+            "a3"
+          ],
+          [
+            "a7",
+            "a3"
+          ],
+          [
+            "a8",
+            "a2"
+          ],
+          [
+            "a8",
+            "a3"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a2",
+          "a4",
+          "a8"
+        ],
+        "agent_2": [
+          "a1",
+          "a3"
+        ],
+        "agent_3": [
+          "a5",
+          "a6",
+          "a7"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a4",
+        "beta": "a4",
+        "path": [
+          "a4",
+          "a4"
+        ],
+        "length": 1,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 13,
+      "p": 0.15,
+      "n": 6,
+      "seed": 55,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a1"
+          ],
+          [
+            "a1",
+            "a3"
+          ],
+          [
+            "a4",
+            "a2"
+          ],
+          [
+            "a5",
+            "a1"
+          ],
+          [
+            "a6",
+            "a4"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a2",
+          "a3",
+          "a6"
+        ],
+        "agent_2": [
+          "a4",
+          "a5"
+        ],
+        "agent_3": [
+          "a1"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_3",
+        "alpha": "a1",
+        "beta": "a1",
+        "path": [
+          "a1",
+          "a1"
+        ],
+        "length": 1,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 16,
+      "p": 0.15,
+      "n": 6,
+      "seed": 58,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a5"
+          ],
+          [
+            "a3",
+            "a2"
+          ],
+          [
+            "a3",
+            "a5"
+          ],
+          [
+            "a4",
+            "a3"
+          ],
+          [
+            "a4",
+            "a5"
+          ],
+          [
+            "a4",
+            "a6"
+          ],
+          [
+            "a6",
+            "a3"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a2"
+        ],
+        "agent_2": [
+          "a1",
+          "a3",
+          "a4",
+          "a5"
+        ],
+        "agent_3": [
+          "a6"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_2",
+        "alpha": "a1",
+        "beta": "a5",
+        "path": [
+          "a1",
+          "a5"
+        ],
+        "length": 1,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 18,
+      "p": 0.15,
+      "n": 8,
+      "seed": 60,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8"
+        ],
+        "attacks": [
+          [
+            "a2",
+            "a7"
+          ],
+          [
+            "a4",
+            "a1"
+          ],
+          [
+            "a4",
+            "a3"
+          ],
+          [
+            "a5",
+            "a1"
+          ],
+          [
+            "a5",
+            "a8"
+          ],
+          [
+            "a6",
+            "a6"
+          ],
+          [
+            "a6",
+            "a8"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a1",
+          "a6",
+          "a7"
+        ],
+        "agent_2": [
+          "a2",
+          "a5"
+        ],
+        "agent_3": [
+          "a3",
+          "a4",
+          "a8"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a6",
+        "beta": "a6",
+        "path": [
+          "a6",
+          "a6"
+        ],
+        "length": 1,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 20,
+      "p": 0.15,
+      "n": 7,
+      "seed": 62,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7"
+        ],
+        "attacks": [
+          [
+            "a2",
+            "a6"
+          ],
+          [
+            "a3",
+            "a7"
+          ],
+          [
+            "a6",
+            "a4"
+          ],
+          [
+            "a6",
+            "a6"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a1",
+          "a2",
+          "a3",
+          "a5"
+        ],
+        "agent_2": [
+          "a6",
+          "a7"
+        ],
+        "agent_3": [
+          "a4"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_2",
+        "alpha": "a6",
+        "beta": "a6",
+        "path": [
+          "a6",
+          "a6"
+        ],
+        "length": 1,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 26,
+      "p": 0.15,
+      "n": 7,
+      "seed": 68,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a5"
+          ],
+          [
+            "a3",
+            "a2"
+          ],
+          [
+            "a3",
+            "a4"
+          ],
+          [
+            "a3",
+            "a6"
+          ],
+          [
+            "a6",
+            "a1"
+          ],
+          [
+            "a6",
+            "a6"
+          ],
+          [
+            "a7",
+            "a2"
+          ],
+          [
+            "a7",
+            "a6"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a5"
+        ],
+        "agent_2": [
+          "a1",
+          "a4",
+          "a7"
+        ],
+        "agent_3": [
+          "a2",
+          "a3",
+          "a6"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_2",
+        "alpha": "a7",
+        "beta": "a1",
+        "path": [
+          "a7",
+          "a6",
+          "a6",
+          "a1"
+        ],
+        "length": 3,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 27,
+      "p": 0.15,
+      "n": 8,
+      "seed": 69,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a2"
+          ],
+          [
+            "a3",
+            "a3"
+          ],
+          [
+            "a3",
+            "a4"
+          ],
+          [
+            "a4",
+            "a3"
+          ],
+          [
+            "a4",
+            "a6"
+          ],
+          [
+            "a5",
+            "a2"
+          ],
+          [
+            "a5",
+            "a3"
+          ],
+          [
+            "a5",
+            "a4"
+          ],
+          [
+            "a6",
+            "a6"
+          ],
+          [
+            "a6",
+            "a7"
+          ],
+          [
+            "a6",
+            "a8"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a1",
+          "a4",
+          "a6"
+        ],
+        "agent_2": [
+          "a2",
+          "a7",
+          "a8"
+        ],
+        "agent_3": [
+          "a3",
+          "a5"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a6",
+        "beta": "a6",
+        "path": [
+          "a6",
+          "a6"
+        ],
+        "length": 1,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 30,
+      "p": 0.15,
+      "n": 8,
+      "seed": 72,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a1"
+          ],
+          [
+            "a3",
+            "a4"
+          ],
+          [
+            "a3",
+            "a6"
+          ],
+          [
+            "a5",
+            "a6"
+          ],
+          [
+            "a6",
+            "a2"
+          ],
+          [
+            "a6",
+            "a3"
+          ],
+          [
+            "a6",
+            "a5"
+          ],
+          [
+            "a7",
+            "a6"
+          ],
+          [
+            "a8",
+            "a1"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a3",
+          "a4",
+          "a6",
+          "a7",
+          "a8"
+        ],
+        "agent_2": [
+          "a1",
+          "a2"
+        ],
+        "agent_3": [
+          "a5"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a3",
+        "beta": "a4",
+        "path": [
+          "a3",
+          "a4"
+        ],
+        "length": 1,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 32,
+      "p": 0.15,
+      "n": 7,
+      "seed": 74,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a3"
+          ],
+          [
+            "a1",
+            "a4"
+          ],
+          [
+            "a3",
+            "a1"
+          ],
+          [
+            "a3",
+            "a3"
+          ],
+          [
+            "a4",
+            "a4"
+          ],
+          [
+            "a5",
+            "a5"
+          ],
+          [
+            "a6",
+            "a1"
+          ],
+          [
+            "a7",
+            "a6"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a2",
+          "a3"
+        ],
+        "agent_2": [
+          "a1",
+          "a4",
+          "a6"
+        ],
+        "agent_3": [
+          "a5",
+          "a7"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a3",
+        "beta": "a3",
+        "path": [
+          "a3",
+          "a3"
+        ],
+        "length": 1,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 34,
+      "p": 0.15,
+      "n": 6,
+      "seed": 76,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "attacks": [
+          [
+            "a2",
+            "a4"
+          ],
+          [
+            "a3",
+            "a2"
+          ],
+          [
+            "a4",
+            "a4"
+          ],
+          [
+            "a5",
+            "a1"
+          ],
+          [
+            "a5",
+            "a4"
+          ],
+          [
+            "a6",
+            "a1"
+          ],
+          [
+            "a6",
+            "a3"
+          ],
+          [
+            "a6",
+            "a4"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a6"
+        ],
+        "agent_2": [
+          "a1",
+          "a3",
+          "a4"
+        ],
+        "agent_3": [
+          "a2",
+          "a5"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_2",
+        "alpha": "a3",
+        "beta": "a4",
+        "path": [
+          "a3",
+          "a2",
+          "a4",
+          "a4"
+        ],
+        "length": 3,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 36,
+      "p": 0.15,
+      "n": 8,
+      "seed": 78,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a2"
+          ],
+          [
+            "a1",
+            "a7"
+          ],
+          [
+            "a1",
+            "a8"
+          ],
+          [
+            "a4",
+            "a3"
+          ],
+          [
+            "a4",
+            "a4"
+          ],
+          [
+            "a5",
+            "a8"
+          ],
+          [
+            "a6",
+            "a2"
+          ],
+          [
+            "a6",
+            "a6"
+          ],
+          [
+            "a7",
+            "a2"
+          ],
+          [
+            "a8",
+            "a2"
+          ],
+          [
+            "a8",
+            "a5"
+          ],
+          [
+            "a8",
+            "a6"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a1",
+          "a3",
+          "a6",
+          "a8"
+        ],
+        "agent_2": [
+          "a2",
+          "a4"
+        ],
+        "agent_3": [
+          "a5",
+          "a7"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a1",
+        "beta": "a8",
+        "path": [
+          "a1",
+          "a8"
+        ],
+        "length": 1,
+        "is_cycle": false,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 37,
+      "p": 0.15,
+      "n": 6,
+      "seed": 79,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a1"
+          ],
+          [
+            "a4",
+            "a1"
+          ],
+          [
+            "a4",
+            "a6"
+          ],
+          [
+            "a5",
+            "a1"
+          ],
+          [
+            "a5",
+            "a2"
+          ],
+          [
+            "a5",
+            "a3"
+          ],
+          [
+            "a6",
+            "a4"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a1",
+          "a6"
+        ],
+        "agent_2": [
+          "a2",
+          "a3",
+          "a4"
+        ],
+        "agent_3": [
+          "a5"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a1",
+        "beta": "a1",
+        "path": [
+          "a1",
+          "a1"
+        ],
+        "length": 1,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 38,
+      "p": 0.15,
+      "n": 7,
+      "seed": 80,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7"
+        ],
+        "attacks": [
+          [
+            "a2",
+            "a6"
+          ],
+          [
+            "a3",
+            "a3"
+          ],
+          [
+            "a4",
+            "a5"
+          ],
+          [
+            "a4",
+            "a6"
+          ],
+          [
+            "a4",
+            "a7"
+          ],
+          [
+            "a5",
+            "a1"
+          ],
+          [
+            "a7",
+            "a5"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a3",
+          "a4"
+        ],
+        "agent_2": [
+          "a5"
+        ],
+        "agent_3": [
+          "a1",
+          "a2",
+          "a6",
+          "a7"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a3",
+        "beta": "a3",
+        "path": [
+          "a3",
+          "a3"
+        ],
+        "length": 1,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    },
+    {
+      "instance_id": 40,
+      "p": 0.15,
+      "n": 6,
+      "seed": 82,
+      "framework": {
+        "arguments": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6"
+        ],
+        "attacks": [
+          [
+            "a1",
+            "a1"
+          ],
+          [
+            "a2",
+            "a6"
+          ],
+          [
+            "a3",
+            "a3"
+          ],
+          [
+            "a3",
+            "a4"
+          ],
+          [
+            "a4",
+            "a4"
+          ],
+          [
+            "a6",
+            "a3"
+          ]
+        ]
+      },
+      "partition": {
+        "agent_1": [
+          "a4"
+        ],
+        "agent_2": [
+          "a1",
+          "a3",
+          "a6"
+        ],
+        "agent_3": [
+          "a2",
+          "a5"
+        ]
+      },
+      "odd_path_witness": {
+        "agent": "agent_1",
+        "alpha": "a4",
+        "beta": "a4",
+        "path": [
+          "a4",
+          "a4"
+        ],
+        "length": 1,
+        "is_cycle": true,
+        "mode": "parity_walk"
+      }
+    }
+  ],
+  "cond_holds_but_not_sp_anomalies": []
+}

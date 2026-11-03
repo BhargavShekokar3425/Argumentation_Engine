@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;">
+<text x="340.0" y="35" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">Category Breakdown Across Attack Probabilities</text>
+<text x="340.0" y="52" text-anchor="middle" font-size="12" fill="#64748b">Distribution of 1,000 instances per p value</text>
+<line x1="80" y1="420.0" x2="590" y2="420.0" stroke="#e2e8f0" stroke-dasharray="4 4" stroke-width="1" />
+<text x="68" y="424.0" text-anchor="end" font-size="12" fill="#64748b">0</text>
+<line x1="80" y1="384.0" x2="590" y2="384.0" stroke="#e2e8f0" stroke-dasharray="4 4" stroke-width="1" />
+<text x="68" y="388.0" text-anchor="end" font-size="12" fill="#64748b">100</text>
+<line x1="80" y1="348.0" x2="590" y2="348.0" stroke="#e2e8f0" stroke-dasharray="4 4" stroke-width="1" />
+<text x="68" y="352.0" text-anchor="end" font-size="12" fill="#64748b">200</text>
+<line x1="80" y1="312.0" x2="590" y2="312.0" stroke="#e2e8f0" stroke-dasharray="4 4" stroke-width="1" />
+<text x="68" y="316.0" text-anchor="end" font-size="12" fill="#64748b">300</text>
+<line x1="80" y1="276.0" x2="590" y2="276.0" stroke="#e2e8f0" stroke-dasharray="4 4" stroke-width="1" />
+<text x="68" y="280.0" text-anchor="end" font-size="12" fill="#64748b">400</text>
+<line x1="80" y1="240.0" x2="590" y2="240.0" stroke="#e2e8f0" stroke-dasharray="4 4" stroke-width="1" />
+<text x="68" y="244.0" text-anchor="end" font-size="12" fill="#64748b">500</text>
+<line x1="80" y1="204.0" x2="590" y2="204.0" stroke="#e2e8f0" stroke-dasharray="4 4" stroke-width="1" />
+<text x="68" y="208.0" text-anchor="end" font-size="12" fill="#64748b">600</text>
+<line x1="80" y1="168.00000000000003" x2="590" y2="168.00000000000003" stroke="#e2e8f0" stroke-dasharray="4 4" stroke-width="1" />
+<text x="68" y="172.00000000000003" text-anchor="end" font-size="12" fill="#64748b">700</text>
+<line x1="80" y1="132.0" x2="590" y2="132.0" stroke="#e2e8f0" stroke-dasharray="4 4" stroke-width="1" />
+<text x="68" y="136.0" text-anchor="end" font-size="12" fill="#64748b">800</text>
+<line x1="80" y1="96.0" x2="590" y2="96.0" stroke="#e2e8f0" stroke-dasharray="4 4" stroke-width="1" />
+<text x="68" y="100.0" text-anchor="end" font-size="12" fill="#64748b">900</text>
+<line x1="80" y1="60.0" x2="590" y2="60.0" stroke="#e2e8f0" stroke-dasharray="4 4" stroke-width="1" />
+<text x="68" y="64.0" text-anchor="end" font-size="12" fill="#64748b">1000</text>
+<line x1="80" y1="420" x2="590" y2="420" stroke="#94a3b8" stroke-width="2" />
+<line x1="80" y1="60" x2="80" y2="420" stroke="#94a3b8" stroke-width="2" />
+<text x="-240.0" y="24" transform="rotate(-90)" text-anchor="middle" font-size="13" font-weight="600" fill="#334155">Instance Count (out of 1,000)</text>
+<rect x="118.25" y="396.24" width="93.50000000000001" height="23.76" fill="#10b981" />
+<text x="165.0" y="412.12" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">66</text>
+<rect x="118.25" y="206.88" width="93.50000000000001" height="189.36" fill="#3b82f6" />
+<text x="165.0" y="305.56" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">526</text>
+<rect x="118.25" y="60.0" width="93.50000000000001" height="146.88" fill="#ef4444" />
+<text x="165.0" y="137.44" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">408</text>
+<text x="165.0" y="445" text-anchor="middle" font-size="14" font-weight="600" fill="#1e293b">p = 0.15</text>
+<rect x="288.25" y="418.56" width="93.50000000000001" height="1.44" fill="#10b981" />
+<rect x="288.25" y="331.44" width="93.50000000000001" height="87.12" fill="#3b82f6" />
+<text x="335.0" y="379.0" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">242</text>
+<rect x="288.25" y="60.0" width="93.50000000000001" height="271.44" fill="#ef4444" />
+<text x="335.0" y="199.72" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">754</text>
+<text x="335.0" y="445" text-anchor="middle" font-size="14" font-weight="600" fill="#1e293b">p = 0.25</text>
+<rect x="458.25" y="373.2" width="93.50000000000001" height="46.800000000000004" fill="#3b82f6" />
+<text x="505.0" y="400.59999999999997" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">130</text>
+<rect x="458.25" y="60.0" width="93.50000000000001" height="313.2" fill="#ef4444" />
+<text x="505.0" y="220.6" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">870</text>
+<text x="505.0" y="445" text-anchor="middle" font-size="14" font-weight="600" fill="#1e293b">p = 0.35</text>
+<rect x="610" y="100" width="180" height="150" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+<text x="622" y="122" font-size="12" font-weight="700" fill="#1e293b">Categories</text>
+<rect x="622" y="144" width="14" height="14" rx="3" fill="#10b981" />
+<text x="642" y="155" font-size="11" fill="#334155">SP & Cond Holds</text>
+<rect x="622" y="168" width="14" height="14" rx="3" fill="#3b82f6" />
+<text x="642" y="179" font-size="11" fill="#334155">SP & Cond Fails</text>
+<rect x="622" y="192" width="14" height="14" rx="3" fill="#ef4444" />
+<text x="642" y="203" font-size="11" fill="#334155">Not SP & Cond Fails</text>
+<rect x="622" y="216" width="14" height="14" rx="3" fill="#f59e0b" />
+<text x="642" y="227" font-size="11" fill="#334155">Cond Holds & Not SP (0)</text>
+</svg>

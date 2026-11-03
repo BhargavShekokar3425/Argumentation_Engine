@@ -1,0 +1,4 @@
+p,total_instances,strategyproof_count,strategyproof_fraction,thm54_holds_count,thm54_holds_fraction,cond_holds_but_not_sp,sp_despite_cond_fails,not_sp_and_cond_fails
+0.15,1000,592,0.592,66,0.066,0,526,408
+0.25,1000,246,0.246,4,0.004,0,242,754
+0.35,1000,130,0.13,0,0.0,0,130,870

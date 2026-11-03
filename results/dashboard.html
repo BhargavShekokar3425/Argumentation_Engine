@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argumentation Engine - Experimental Dashboard</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 24px;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            margin-bottom: 32px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 16px;
+        }
+        h1 {
+            margin: 0 0 8px 0;
+            font-size: 28px;
+            color: #1e3a8a;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+        }
+        .card-title {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .card-value {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+        .card-subtext {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 32px 0 16px 0;
+            color: #1e293b;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            margin-bottom: 32px;
+        }
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            background-color: #f1f5f9;
+            font-size: 13px;
+            font-weight: 600;
+            color: #475569;
+        }
+        tr:hover {
+            background-color: #f8fafc;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .badge-success { background: #dcfce7; color: #15803d; }
+        .badge-blue { background: #dbeafe; color: #1d4ed8; }
+        .badge-danger { background: #fee2e2; color: #b91c1c; }
+        .badge-zero { background: #f1f5f9; color: #475569; }
+        .charts-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        .chart-box {
+            background: var(--card-bg);
+            padding: 16px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        .chart-box img, .chart-box object {
+            max-width: 100%;
+            height: auto;
+        }
+        pre {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Abstract Argumentation Engine & Strategic Mechanism Dashboard</h1>
+            <div class="subtitle">Complete Experimental Study (3,000 Random Instances across p &in; {0.15, 0.25, 0.35}, 3 Agents, n &in; [6, 8])</div>
+        </header>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">Total Random Instances</div>
+                <div class="card-value">3,000</div>
+                <div class="card-subtext">1,000 runs per probability level</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Overall Strategyproofness</div>
+                <div class="card-value">32.3%</div>
+                <div class="card-subtext">Decreases as attack density p grows</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Theorem 5.4 False Positives</div>
+                <div class="card-value" style="color: var(--success);">0</div>
+                <div class="card-subtext">Cond Holds & Not SP: 100% sound sufficient condition</div>
+            </div>
+            <div class="card">
+                <div class="card-title">SP Despite Cond Fails</div>
+                <div class="card-value" style="color: var(--primary);">898</div>
+                <div class="card-subtext">Demonstrates sufficiency is not necessary</div>
+            </div>
+        </div>
+
+        <div class="section-title">Summary Statistics Table</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attack Prob (p)</th>
+                    <th>Instances</th>
+                    <th>Strategyproof (Thm 5.3)</th>
+                    <th>SP Fraction</th>
+                    <th>Thm 5.4 Holds</th>
+                    <th>Thm 5.4 Fraction</th>
+                    <th>Cond Holds &amp; Not SP (Exp. 0)</th>
+                    <th>SP &amp; Cond Fails</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><strong>p = 0.15</strong></td>
+                    <td>1000</td>
+                    <td><span class="badge badge-blue">592</span></td>
+                    <td><strong>59.20%</strong></td>
+                    <td><span class="badge badge-success">66</span></td>
+                    <td>6.60%</td>
+                    <td><span class="badge badge-danger">0</span></td>
+                    <td><span class="badge badge-blue">526</span></td>
+                </tr>
+        
+                <tr>
+                    <td><strong>p = 0.25</strong></td>
+                    <td>1000</td>
+                    <td><span class="badge badge-blue">246</span></td>
+                    <td><strong>24.60%</strong></td>
+                    <td><span class="badge badge-success">4</span></td>
+                    <td>0.40%</td>
+                    <td><span class="badge badge-danger">0</span></td>
+                    <td><span class="badge badge-blue">242</span></td>
+                </tr>
+        
+                <tr>
+                    <td><strong>p = 0.35</strong></td>
+                    <td>1000</td>
+                    <td><span class="badge badge-blue">130</span></td>
+                    <td><strong>13.00%</strong></td>
+                    <td><span class="badge badge-success">0</span></td>
+                    <td>0.00%</td>
+                    <td><span class="badge badge-danger">0</span></td>
+                    <td><span class="badge badge-blue">130</span></td>
+                </tr>
+        
+            </tbody>
+        </table>
+
+        <div class="section-title">Experimental Charts</div>
+        <div class="charts-row">
+            <div class="chart-box">
+                <object data="strategyproof_comparison.svg" type="image/svg+xml" width="100%"></object>
+            </div>
+            <div class="chart-box">
+                <object data="outcomes_breakdown.svg" type="image/svg+xml" width="100%"></object>
+            </div>
+        </div>
+
+        <div class="section-title">Key Theoretical Insights</div>
+        <div class="card" style="margin-bottom: 24px;">
+            <p><strong>1. Strict Sufficiency of Theorem 5.4:</strong> In all 3,000 generated instances across all edge densities, there was <em>zero</em> instance where Theorem 5.4 condition was met and the mechanism failed to be strategyproof. This confirms the mathematical correctness of Theorem 5.4.</p>
+            <p><strong>2. Conservatism of the Condition:</strong> A substantial fraction of instances (898 instances total: 526 at p=0.15, 242 at p=0.25, 130 at p=0.35) are strategyproof even though Theorem 5.4 fails. This occurs when an agent owns indirect self-defeating arguments that are protected by other unattacked arguments or canceled out through conflicting attackers.</p>
+            <p><strong>3. Density Effect:</strong> As attack probability p increases from 0.15 to 0.35, the graph becomes dense with cycles and attack paths, drastically reducing the proportion of strategyproof frameworks from 59.2% down to 13.0%.</p>
+        </div>
+
+        <div class="section-title">Sample Manipulation Counterexample (Theorem 5.3 Violation)</div>
+        <div class="card">
+
+            <p><strong>Instance #3 (p = 0.15, n = 8):</strong></p>
+            <p>Agent <code>agent_1</code> owns arguments <code>['a1', 'a5', 'a6']</code>.</p>
+            <p>By hiding arguments <code>['a1', 'a6']</code> (deviating to <code>['a5']</code>), the agent increases utility from <strong>0</strong> to <strong>1</strong>!</p>
+            <pre>Truthful Outcome: []&#10;Deviation Outcome: ['a5']</pre>
+        
+        </div>
+    </div>
+</body>
+</html>
