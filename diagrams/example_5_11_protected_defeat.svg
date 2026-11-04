@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 480" width="920" height="480" style="background:#ffffff; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;">
+  <defs>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arr-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444"/>
+    </marker>
+    <filter id="c-sh" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <text x="460" y="30" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">Protected Indirect Defeat (Discussion after Example 5.11)</text>
+  <text x="460" y="48" text-anchor="middle" font-size="12" fill="#64748b">Proof That Theorem 5.4 is SUFFICIENT, But NOT NECESSARY (Protected by α_6)</text>
+
+  <!-- Left: Graph with Protective Shield -->
+  <rect x="40" y="70" width="460" height="380" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#c-sh)"/>
+  <text x="270" y="98" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1e293b">Graph Topology with Protecting Argument α_6</text>
+
+  <!-- a1 (X) -->
+  <circle cx="90" cy="190" r="24" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="90" y="195" text-anchor="middle" font-size="14" font-weight="700" fill="#15803d">α_1</text>
+  <text x="90" y="228" text-anchor="middle" font-size="10" font-weight="600" fill="#2563eb">Agent X</text>
+
+  <!-- a2 (Y) -->
+  <circle cx="190" cy="190" r="24" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="190" y="195" text-anchor="middle" font-size="14" font-weight="700" fill="#b91c1c">α_2</text>
+  <text x="190" y="228" text-anchor="middle" font-size="10" font-weight="600" fill="#d97706">Agent Y</text>
+
+  <!-- a3 (Z) -->
+  <circle cx="290" cy="190" r="24" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="290" y="195" text-anchor="middle" font-size="14" font-weight="700" fill="#b91c1c">α_3</text>
+  <text x="290" y="228" text-anchor="middle" font-size="10" font-weight="600" fill="#7c3aed">Agent Z</text>
+
+  <!-- a4 (X) -->
+  <circle cx="410" cy="150" r="24" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="410" y="155" text-anchor="middle" font-size="14" font-weight="700" fill="#15803d">α_4</text>
+  <text x="410" y="188" text-anchor="middle" font-size="10" font-weight="600" fill="#2563eb">Agent X</text>
+
+  <!-- a5 (X) -->
+  <circle cx="410" cy="230" r="24" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="410" y="235" text-anchor="middle" font-size="14" font-weight="700" fill="#15803d">α_5</text>
+  <text x="410" y="268" text-anchor="middle" font-size="10" font-weight="600" fill="#2563eb">Agent X</text>
+
+  <!-- a6 (X) -> Protecting argument! -->
+  <circle cx="290" cy="330" r="26" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+  <text x="290" y="335" text-anchor="middle" font-size="15" font-weight="700" fill="#1e40af">α_6</text>
+  <text x="290" y="372" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">Agent X (Shield!)</text>
+  <text x="290" y="388" text-anchor="middle" font-size="9.5" fill="#16a34a">[UNATTACKED]</text>
+
+  <!-- Attacks -->
+  <line x1="114" y1="190" x2="160" y2="190" stroke="#ef4444" stroke-width="2" marker-end="url(#arr-r)"/>
+  <line x1="214" y1="190" x2="260" y2="190" stroke="#ef4444" stroke-width="2" marker-end="url(#arr-r)"/>
+  <line x1="312" y1="180" x2="382" y2="158" stroke="#94a3b8" stroke-dasharray="3 3" stroke-width="1.5"/>
+  <line x1="312" y1="200" x2="382" y2="222" stroke="#94a3b8" stroke-dasharray="3 3" stroke-width="1.5"/>
+
+  <!-- Protective attack: a6 -> a3 (green thick arrow) -->
+  <line x1="290" y1="304" x2="290" y2="222" stroke="#16a34a" stroke-width="3" marker-end="url(#arr-g)"/>
+  <text x="340" y="270" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">Defeats α_3!</text>
+
+  <rect x="55" y="405" width="430" height="32" rx="4" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="270" y="426" text-anchor="middle" font-size="10.5" fill="#b91c1c">Odd path α_1 → α_2 → α_3 → α_4 (len 3) still exists in the graph!</text>
+
+  <!-- Right: Mathematical Analysis -->
+  <rect x="520" y="70" width="360" height="380" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#c-sh)"/>
+  <text x="700" y="98" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1e293b">Mathematical Proof of Strategyproofness</text>
+
+  <rect x="535" y="115" width="330" height="95" rx="6" fill="#ffffff" stroke="#ef4444"/>
+  <text x="545" y="135" font-size="11.5" font-weight="700" fill="#b91c1c">1. Theorem 5.4 Check: FAILS</text>
+  <text x="545" y="153" font-size="10.5" fill="#334155">• Agent X owns both α_1 and α_4</text>
+  <text x="545" y="170" font-size="10.5" fill="#334155">• Directed path α_1 → α_2 → α_3 → α_4 has length 3 (odd)</text>
+  <text x="545" y="188" font-size="10" font-weight="700" fill="#dc2626">⇒ Structural condition is violated</text>
+
+  <rect x="535" y="220" width="330" height="150" rx="6" fill="#ffffff" stroke="#16a34a"/>
+  <text x="545" y="240" font-size="11.5" font-weight="700" fill="#15803d">2. Theorem 5.3 Exact Check: STRATEGYPROOF!</text>
+  <text x="545" y="258" font-size="10.5" fill="#334155">• α_6 has NO attackers ⇒ always accepted in GE</text>
+  <text x="545" y="275" font-size="10.5" fill="#334155">• α_6 defeats α_3 ⇒ α_3 is OUT under truthfulness</text>
+  <text x="545" y="292" font-size="10.5" fill="#334155">• Defeated α_3 frees α_4 and α_5 to enter GE</text>
+  <text x="545" y="309" font-size="10.5" fill="#334155">• Truthful outcome: GE = {α_1, α_4, α_5, α_6}</text>
+  <text x="545" y="327" font-size="11" font-weight="700" fill="#1d4ed8">• Agent X utility = 4 (Maximum possible!)</text>
+  <text x="545" y="345" font-size="10" fill="#15803d">• No deviation can yield &gt; 4 ⇒ Truthfulness is dominant!</text>
+
+  <rect x="535" y="380" width="330" height="55" rx="6" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="700" y="400" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af">CORE THEORETICAL INSIGHT:</text>
+  <text x="700" y="418" text-anchor="middle" font-size="10" fill="#1e3a8a">Theorem 5.4 is SUFFICIENT, but NOT NECESSARY.</text>
+  <text x="700" y="430" text-anchor="middle" font-size="9" fill="#64748b">Verified on 898 empirical instances in Part 3!</text>
+</svg>

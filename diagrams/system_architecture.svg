@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 560" width="950" height="560" style="background:#ffffff; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="475" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Argumentation Engine &amp; Strategic Mechanism Architecture</text>
+  <text x="475" y="52" text-anchor="middle" font-size="12" fill="#64748b">End-to-End Computational Pipeline: Formal Semantics to Game-Theoretic Verification</text>
+
+  <!-- LAYER 1: Core Framework -->
+  <rect x="40" y="80" width="260" height="440" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="40" y="80" width="260" height="38" rx="8" fill="#e2e8f0"/>
+  <text x="170" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">1. ARGUMENTATION CORE</text>
+
+  <rect x="55" y="130" width="230" height="55" rx="6" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="170" y="152" text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">Framework AF = &lt;A, R&gt;</text>
+  <text x="170" y="170" text-anchor="middle" font-size="10.5" fill="#64748b">Adjacency attackers / targets</text>
+
+  <rect x="55" y="195" width="230" height="55" rx="6" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="170" y="217" text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">Conflict-Freeness Check</text>
+  <text x="170" y="235" text-anchor="middle" font-size="10.5" fill="#64748b">S ∩ S+ = ∅ (Internal attacks)</text>
+
+  <rect x="55" y="260" width="230" height="55" rx="6" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="170" y="282" text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">Defense (Acceptability)</text>
+  <text x="170" y="300" text-anchor="middle" font-size="10.5" fill="#64748b">attackers[a] ⊆ S+</text>
+
+  <rect x="55" y="325" width="230" height="55" rx="6" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="170" y="347" text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">Characteristic Function F(S)</text>
+  <text x="170" y="365" text-anchor="middle" font-size="10.5" fill="#64748b">F(S) = {a | S defends a}</text>
+
+  <rect x="55" y="390" width="230" height="55" rx="6" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="170" y="412" text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">Admissibility &amp; Complete</text>
+  <text x="170" y="430" text-anchor="middle" font-size="10.5" fill="#64748b">S ⊆ F(S) and S = F(S)</text>
+
+  <rect x="55" y="455" width="230" height="50" rx="6" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="170" y="476" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0f172a">Erdös-Rényi Generator</text>
+  <text x="170" y="492" text-anchor="middle" font-size="10" fill="#64748b">Random AF(n, p) + Seeded</text>
+
+  <!-- Connect 1 -> 2 -->
+  <line x1="300" y1="300" x2="340" y2="300" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <!-- LAYER 2: Semantics & Labelling -->
+  <rect x="345" y="80" width="260" height="440" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="345" y="80" width="260" height="38" rx="8" fill="#e2e8f0"/>
+  <text x="475" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">2. DUNG SEMANTICS &amp; LABELS</text>
+
+  <rect x="360" y="130" width="230" height="60" rx="6" fill="#ffffff" stroke="#3b82f6"/>
+  <text x="475" y="152" text-anchor="middle" font-size="12" font-weight="600" fill="#1d4ed8">Grounded Extension</text>
+  <text x="475" y="170" text-anchor="middle" font-size="10.5" fill="#64748b">Kleene Least Fixed Point: S_0 = ∅</text>
+  <text x="475" y="183" text-anchor="middle" font-size="9.5" fill="#2563eb">Always unique &amp; polynomial</text>
+
+  <rect x="360" y="200" width="230" height="50" rx="6" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="475" y="222" text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">Complete Extensions</text>
+  <text x="475" y="238" text-anchor="middle" font-size="10.5" fill="#64748b">All fixed points: S = F(S)</text>
+
+  <rect x="360" y="260" width="230" height="50" rx="6" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="475" y="282" text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">Preferred Extensions</text>
+  <text x="475" y="298" text-anchor="middle" font-size="10.5" fill="#64748b">Inclusion-maximal admissible sets</text>
+
+  <rect x="360" y="320" width="230" height="50" rx="6" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="475" y="342" text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">Stable &amp; Semi-Stable</text>
+  <text x="475" y="358" text-anchor="middle" font-size="10.5" fill="#64748b">S+ = A \ S / Maximal range</text>
+
+  <rect x="360" y="380" width="230" height="65" rx="6" fill="#ffffff" stroke="#10b981"/>
+  <text x="475" y="402" text-anchor="middle" font-size="12" font-weight="600" fill="#047857">Caminada 3-Valued Labels</text>
+  <text x="475" y="420" text-anchor="middle" font-size="10.5" fill="#64748b">IN = E, OUT = E+, UNDEC</text>
+  <text x="475" y="435" text-anchor="middle" font-size="9.5" fill="#059669">Bijective mapping &amp; verification</text>
+
+  <rect x="360" y="455" width="230" height="50" rx="6" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="475" y="476" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0f172a">Acceptance Status</text>
+  <text x="475" y="492" text-anchor="middle" font-size="10" fill="#64748b">Skeptical ∩ / Credulous ∪ / Rejected</text>
+
+  <!-- Connect 2 -> 3 -->
+  <line x1="605" y1="300" x2="645" y2="300" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <!-- LAYER 3: Strategic Mechanism & Verification -->
+  <rect x="650" y="80" width="260" height="440" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="650" y="80" width="260" height="38" rx="8" fill="#e2e8f0"/>
+  <text x="780" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">3. STRATEGIC MECHANISM</text>
+
+  <rect x="665" y="130" width="230" height="60" rx="6" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="780" y="152" text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">Agent Partition &amp; Reports</text>
+  <text x="780" y="170" text-anchor="middle" font-size="10.5" fill="#64748b">A = A_1 ∪ A_2 ∪ A_3; R_i ⊆ A_i</text>
+  <text x="780" y="183" text-anchor="middle" font-size="9.5" fill="#64748b">Incident attacks delete on hide</text>
+
+  <rect x="665" y="200" width="230" height="60" rx="6" fill="#ffffff" stroke="#3b82f6"/>
+  <text x="780" y="222" text-anchor="middle" font-size="12" font-weight="600" fill="#1d4ed8">Grounded Direct Mechanism</text>
+  <text x="780" y="240" text-anchor="middle" font-size="10.5" fill="#64748b">g(R) = GE(AF[∪ R_i])</text>
+  <text x="780" y="253" text-anchor="middle" font-size="9.5" fill="#2563eb">Utility: u_i = |A_i ∩ g(R)|</text>
+
+  <rect x="665" y="270" width="230" height="60" rx="6" fill="#ffffff" stroke="#ef4444"/>
+  <text x="780" y="292" text-anchor="middle" font-size="12" font-weight="600" fill="#b91c1c">Theorem 5.3 Verifier</text>
+  <text x="780" y="310" text-anchor="middle" font-size="10.5" fill="#64748b">Dominant-Strategy IC Check</text>
+  <text x="780" y="323" text-anchor="middle" font-size="9.5" fill="#ef4444">Outputs manipulation witnesses</text>
+
+  <rect x="665" y="340" width="230" height="60" rx="6" fill="#ffffff" stroke="#10b981"/>
+  <text x="780" y="362" text-anchor="middle" font-size="12" font-weight="600" fill="#047857">Theorem 5.4 Verifier</text>
+  <text x="780" y="380" text-anchor="middle" font-size="10.5" fill="#64748b">2-State Parity BFS on G × Z_2</text>
+  <text x="780" y="393" text-anchor="middle" font-size="9.5" fill="#059669">Odd-path indirect self-defeat</text>
+
+  <rect x="665" y="410" width="230" height="45" rx="6" fill="#ffffff" stroke="#8b5cf6"/>
+  <text x="780" y="430" text-anchor="middle" font-size="11.5" font-weight="600" fill="#6d28d9">Powerset Caching Opt</text>
+  <text x="780" y="446" text-anchor="middle" font-size="9.5" fill="#64748b">Precomputes 256 subsets in 1ms</text>
+
+  <rect x="665" y="465" width="230" height="45" rx="6" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="780" y="485" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0f172a">Experimental Benchmark</text>
+  <text x="780" y="501" text-anchor="middle" font-size="9.5" fill="#64748b">3,000 runs (p=0.15, 0.25, 0.35)</text>
+
+  <!-- Bottom Legend Banner -->
+  <text x="475" y="545" text-anchor="middle" font-size="11" fill="#94a3b8">Autonomous Systems • Assignment 3: Argumentation Engine • Pure Python 3 • Zero External Dependencies</text>
+</svg>

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="900" height="480" style="background:#ffffff; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444"/>
+    </marker>
+    <filter id="card-sh" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <text x="450" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Argumentation Semantics &amp; Caminada Labellings (3-Argument Benchmark)</text>
+  <text x="450" y="50" text-anchor="middle" font-size="12" fill="#64748b">Topology: a and b attack each other; b attacks c</text>
+
+  <!-- Left: Graph Diagram -->
+  <rect x="40" y="80" width="380" height="360" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#card-sh)"/>
+  <text x="230" y="108" text-anchor="middle" font-size="14" font-weight="700" fill="#1e293b">Directed Attack Graph AF = &lt;A, R&gt;</text>
+
+  <!-- Argument a -->
+  <circle cx="120" cy="220" r="32" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="120" y="226" text-anchor="middle" font-size="18" font-weight="700" fill="#1e3a8a">a</text>
+  <text x="120" y="270" text-anchor="middle" font-size="11" fill="#64748b">Attacks b</text>
+  <text x="120" y="284" text-anchor="middle" font-size="11" fill="#64748b">Defends c</text>
+
+  <!-- Argument b -->
+  <circle cx="260" cy="220" r="32" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+  <text x="260" y="226" text-anchor="middle" font-size="18" font-weight="700" fill="#92400e">b</text>
+  <text x="260" y="270" text-anchor="middle" font-size="11" fill="#64748b">Attacks a, c</text>
+  <text x="260" y="284" text-anchor="middle" font-size="11" fill="#64748b">Defends b</text>
+
+  <!-- Argument c -->
+  <circle cx="370" cy="220" r="28" fill="#dcfce7" stroke="#10b981" stroke-width="2.5"/>
+  <text x="370" y="226" text-anchor="middle" font-size="18" font-weight="700" fill="#065f46">c</text>
+  <text x="370" y="270" text-anchor="middle" font-size="11" fill="#64748b">Attacked by b</text>
+  <text x="370" y="284" text-anchor="middle" font-size="11" fill="#64748b">Defended by a</text>
+
+  <!-- Attacks: a -> b (curved top), b -> a (curved bot), b -> c (straight) -->
+  <path d="M 148 205 Q 190 170 230 205" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arr)"/>
+  <path d="M 232 235 Q 190 270 152 235" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="292" y1="220" x2="338" y2="220" stroke="#ef4444" stroke-width="2" marker-end="url(#arr)"/>
+
+  <text x="190" y="175" text-anchor="middle" font-size="10.5" font-weight="600" fill="#ef4444">(a, b)</text>
+  <text x="190" y="272" text-anchor="middle" font-size="10.5" font-weight="600" fill="#ef4444">(b, a)</text>
+  <text x="315" y="210" text-anchor="middle" font-size="10.5" font-weight="600" fill="#ef4444">(b, c)</text>
+
+  <!-- Key Insight Box -->
+  <rect x="55" y="340" width="350" height="85" rx="6" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="65" y="360" font-size="11.5" font-weight="700" fill="#1e40af">Characteristic Function Behavior:</text>
+  <text x="65" y="378" font-size="11" fill="#1e3a8a">• F(∅) = ∅ (both a and b are challenged)</text>
+  <text x="65" y="396" font-size="11" fill="#1e3a8a">• F({a}) = {a, c} (a attacks b ⇒ a defends c)</text>
+  <text x="65" y="414" font-size="11" fill="#1e3a8a">• F({b}) = {b} (b defends itself against a)</text>
+
+  <!-- Right: Semantics & Labellings Table -->
+  <rect x="450" y="80" width="410" height="360" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#card-sh)"/>
+  <text x="655" y="108" text-anchor="middle" font-size="14" font-weight="700" fill="#1e293b">Computed Extensions &amp; Legal Labellings</text>
+
+  <!-- Semantics block -->
+  <rect x="465" y="125" width="380" height="115" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="475" y="145" font-size="12" font-weight="700" fill="#0f172a">Dung Classical Semantics:</text>
+  <text x="475" y="165" font-size="11.5" fill="#334155"><tspan font-weight="600">Grounded:</tspan> ∅ (Least fixed point of F)</text>
+  <text x="475" y="183" font-size="11.5" fill="#334155"><tspan font-weight="600">Complete:</tspan> ∅, {b}, {a, c} (Conflict-free fixed points)</text>
+  <text x="475" y="201" font-size="11.5" fill="#334155"><tspan font-weight="600">Preferred:</tspan> {b}, {a, c} (Maximal complete)</text>
+  <text x="475" y="219" font-size="11.5" fill="#334155"><tspan font-weight="600">Stable &amp; Semi-Stable:</tspan> {b}, {a, c} (Range = {a, b, c})</text>
+
+  <!-- Caminada Labelling table -->
+  <rect x="465" y="255" width="380" height="170" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="475" y="275" font-size="12" font-weight="700" fill="#0f172a">Caminada 3-Valued Labellings (IN / OUT / UNDEC):</text>
+
+  <rect x="475" y="290" width="360" height="24" fill="#f1f5f9"/>
+  <text x="490" y="306" font-size="11" font-weight="700" fill="#475569">#</text>
+  <text x="530" y="306" font-size="11" font-weight="700" fill="#15803d">IN (Accepted)</text>
+  <text x="645" y="306" font-size="11" font-weight="700" fill="#b91c1c">OUT (Defeated)</text>
+  <text x="750" y="306" font-size="11" font-weight="700" fill="#d97706">UNDEC</text>
+
+  <line x1="475" y1="314" x2="835" y2="314" stroke="#cbd5e1"/>
+
+  <text x="490" y="335" font-size="11" fill="#334155">1</text>
+  <text x="530" y="335" font-size="11" fill="#15803d">∅</text>
+  <text x="645" y="335" font-size="11" fill="#b91c1c">∅</text>
+  <text x="750" y="335" font-size="11" fill="#d97706">{a, b, c}</text>
+
+  <text x="490" y="365" font-size="11" fill="#334155">2</text>
+  <text x="530" y="365" font-size="11" fill="#15803d">{b}</text>
+  <text x="645" y="365" font-size="11" fill="#b91c1c">{a, c}</text>
+  <text x="750" y="365" font-size="11" fill="#d97706">∅</text>
+
+  <text x="490" y="395" font-size="11" fill="#334155">3</text>
+  <text x="530" y="395" font-size="11" fill="#15803d">{a, c}</text>
+  <text x="645" y="395" font-size="11" fill="#b91c1c">{b}</text>
+  <text x="750" y="395" font-size="11" fill="#d97706">∅</text>
+
+  <text x="475" y="418" font-size="10" fill="#64748b">• Argument a acceptance under preferred: Credulously accepted only</text>
+</svg>
