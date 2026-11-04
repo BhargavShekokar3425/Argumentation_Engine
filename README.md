@@ -1,217 +1,185 @@
 # Abstract Argumentation Engine & Strategic Mechanism
 
-A rigorous computational engine and game-theoretic mechanism implementation for **Abstract Argumentation Frameworks**, **Argumentation Semantics**, and **Strategic Argumentation (Mechanism Design)**.
-
-Developed for **Assignment 3: Argumentation Engine**, this project combines:
-- **Artificial Intelligence**: Acceptability and justification of arguments under classical Dung semantics.
-- **Graph Theory**: Caminada 3-valued argument labellings, cycles, and parity-aware odd-path graph traversals.
-- **Game Theory & Mechanism Design**: Grounded direct mechanisms, strategic argument hiding, and empirical verification of **Theorem 5.3** (Strategyproofness) and **Theorem 5.4** (Sufficient structural condition).
-
----
-
-## Table of Contents
-1. [Core Features](#core-features)
-2. [Project Architecture](#project-architecture)
-3. [Theoretical Overview](#theoretical-overview)
-4. [Textbook Misprints Clarification](#textbook-misprints-clarification)
-5. [Installation & Requirements](#installation--requirements)
-6. [Quickstart & Demonstration](#quickstart--demonstration)
-7. [Running the Test Suite](#running-the-test-suite)
-8. [Randomized Experiments (3,000 Runs)](#randomized-experiments-3000-runs)
-9. [Experimental Results Summary](#experimental-results-summary)
-10. [Deliverables & Report](#deliverables--report)
+**Course:** Autonomous Systems  
+**Project:** Assignment 3 — Argumentation Engine  
+**Authors:**
+- **Bhargav Shekokar** (B23CS1008)
+- **Darsh patel** (B23CM1054)
+- **Tanisha Saini** (B23CM1042)
 
 ---
 
-## Core Features
+## Executive Summary & Overview
 
-### Part 1: Argumentation Engine
-- **Framework Representation**: Directed attack graphs $AF = \langle A, R \rangle$ with precomputed incoming/outgoing adjacency sets and validated endpoints.
-- **Fundamental Properties**:
-  - Conflict-freeness check ($S \cap S^+ = \emptyset$).
-  - Defense / Acceptability check ($\forall b \in attackers(a), \exists c \in S \text{ s.t. } (c, b) \in R$).
-  - Characteristic function $F_{AF}(S) = \{a \in A \mid S \text{ defends } a\}$.
-  - Admissibility check ($S$ is conflict-free and $S \subseteq F(S)$).
-  - Complete extension check ($S$ is conflict-free and $S = F(S)$).
-- **Semantics Computation**:
-  - **Grounded Extension**: Unique least fixed point of $F_{AF}$ computed by Kleene iteration from $\emptyset$.
-  - **Complete Extensions**: All conflict-free fixed points of $F_{AF}$.
-  - **Preferred Extensions**: Inclusion-maximal admissible sets (inclusion-maximal complete extensions).
-  - **Stable Extensions**: Conflict-free sets attacking every outside argument ($S^+ = A \setminus S$). Returns `[]` when none exist (e.g. odd 3-cycle).
-  - **Semi-stable Extensions**: Complete extensions with inclusion-maximal range $S \cup S^+$.
-- **Caminada 3-Valued Labellings**:
-  - Bijective generation of $(IN, OUT, UNDEC)$ labellings from complete extensions.
-  - Independent condition validation:
-    1. $x \in IN \iff \forall y \in attackers(x), y \in OUT$.
-    2. $x \in OUT \iff \exists y \in attackers(x), y \in IN$.
-    3. $x \in UNDEC \iff (\forall y, y \notin IN) \land (\exists y, y \in UNDEC)$.
-- **Acceptance Status**:
-  - Classifies any argument $\alpha$ under any chosen semantics as **Skeptically accepted** ($\alpha \in \bigcap \mathcal{E}$), **Credulously accepted** ($\alpha \in \bigcup \mathcal{E}$), or **Rejected**.
-  - Handles empty extension sets cleanly (e.g., stable semantics on odd cycles).
+This repository provides a mathematically rigorous, fully verified computational engine and strategic mechanism design framework for **Abstract Argumentation**. The project bridges three computer science disciplines:
 
-### Part 2: Strategic Argumentation
-- **Grounded Direct Argumentation Mechanism**:
-  - $N$ agents partition arguments: $A = \bigcup_{i=1}^N A_i$.
-  - Agents submit reports $R_i \subseteq A_i$ (revealed subsets).
-  - Evaluates the grounded extension of the induced subgraph $AF[\bigcup R_i]$.
-  - Correctly removes incident attacks when arguments are hidden.
-- **Utility Function**:
-  - $u_i(R_1, \dots, R_N) = |A_i \cap g(R_1, \dots, R_N)|$ (measured against *true* owned arguments $A_i$).
-- **Best Responses**:
-  - Enumerates all subsets $S_i \subseteq A_i$ and returns *all* maximizing reports.
-- **Theorem 5.3 (Strategyproofness Verification)**:
-  - Exhaustively tests whether truthfulness $A_i$ is a best response against *every* possible profile of reports by other agents $R_{-i} \in \prod_{j \neq i} 2^{A_j}$.
-  - Returns explicit counterexample witnesses on failure (agent, hidden arguments, utilities, outcomes).
-- **Theorem 5.4 (Odd-Length Path Condition)**:
-  - Verifies whether any agent owns arguments $\alpha, \beta$ connected by an odd-length directed path.
-  - Handles cycles correctly via parity-aware BFS (tracking state `(vertex, parity)`) and simple path DFS.
-  - Accounts for self-attacks ($\alpha \to \alpha$, length 1) and odd cycles.
+1. **Artificial Intelligence (Knowledge Representation & Reasoning):** Determining collective justification of conflicting arguments via classical Dung semantics (Grounded, Complete, Preferred, Stable, Semi-stable) and Caminada 3-valued $(IN, OUT, UNDEC)$ labellings.
+2. **Graph Theory:** Representing directed attack relations, cyclic structures, and parity-aware directed walk/path reachability ($G \times \mathbb{Z}_2$).
+3. **Game Theory & Mechanism Design:** Analyzing multi-agent strategic argumentation where self-interested agents possess private argument subsets and can strategically withhold arguments to manipulate the Grounded Direct Mechanism.
 
-### Part 3: Randomized Experiments & Optimization
-- **3,000 Total Random Instances**:
-  - 1,000 runs per attack probability $p \in \{0.15, 0.25, 0.35\}$.
-  - 6 to 8 arguments partitioned randomly among 3 agents.
-- **High-Performance Caching**:
-  - Precomputes $G[X] = GE(AF[X])$ for all $X \subseteq A$ ($2^8 = 256$ subsets).
-  - Completes 3,000 full game-theoretic evaluations in **2.5 seconds** (~1,200 instances/sec).
-- **Vector Plots & Interactive Dashboard**:
-  - Zero-dependency SVG generators for grouped comparison and stacked category breakdown charts.
-  - Interactive HTML dashboard (`results/dashboard.html`) for browser inspection.
+We empirically and theoretically evaluate **Theorem 5.3** (exact dominant-strategy incentive compatibility) and **Theorem 5.4** (the structural odd-path sufficient condition) across **3,000 randomized argumentation frameworks**.
+
+![System Architecture](diagrams/system_architecture.svg)
 
 ---
 
-## Project Architecture
+## Key Experimental Results (3,000 Instances)
+
+From our 3,000 randomized benchmark instances across 3 agents, $n \in \{6, 7, 8\}$ arguments, and attack probabilities $p \in \{0.15, 0.25, 0.35\}$:
+
+| Attack Prob ($p$) | Instances | Actually Strategyproof (Thm 5.3) | Strategyproof Fraction ($f_p$) | Thm 5.4 Condition Holds | Thm 5.4 Fraction | Cond Holds & NOT SP (Exp. 0) | SP & Cond Fails (Sufficiency $\ne$ Necessity) |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **0.15** | 1,000 | 592 | **59.20%** | 66 | 6.60% | **0** | 526 |
+| **0.25** | 1,000 | 246 | **24.60%** | 4 | 0.40% | **0** | 242 |
+| **0.35** | 1,000 | 130 | **13.00%** | 0 | 0.00% | **0** | 130 |
+| **Overall** | **3,000** | **968** | **32.27%** | **70** | **2.33%** | **0 (100% Sound)** | **898 (29.93%)** |
+
+### Key Findings & Insights:
+1. **Theorem 5.4 Soundness:** Exactly **0 false positives** across all 3,000 instances. Whenever no agent holds arguments connected by an odd-length attack path, strategyproofness is guaranteed.
+2. **Sufficiency Without Necessity:** Exactly **898 instances** (29.93%) were strategyproof even though Theorem 5.4's condition failed.
+3. **Graph Density Impact:** Strategyproofness drops precipitously from **59.20%** down to **13.00%** as $p$ increases from 0.15 to 0.35 due to the combinatorial proliferation of attack cycles.
+
+<p align="center">
+  <img src="results/strategyproof_comparison.svg" alt="Strategyproof Comparison Chart" width="48%" />
+  <img src="results/outcomes_breakdown.svg" alt="Outcomes Breakdown Chart" width="48%" />
+</p>
+
+---
+
+## Literature Pedigree & Textbook Errata Resolution
+
+The foundational theory and numbered theorems trace directly to **Yoav Shoham & Kevin Leyton-Brown (2009)**, *Multiagent Systems: Algorithmic, Game-Theoretic, and Logical Foundations*, Cambridge University Press, specifically **Chapter 5: Argumentation among Agents**, and original research by **Iyad Rahwan & Kate Larson (AAMAS 2008, IJCAI 2009)**.
+
+Our implementation resolves two documented misprints present in the textbook literature (noted on Page 2 of the Assignment PDF):
+
+### 1. Example 5.10: Swapped Utility Erratum
+- **Topology:** $\alpha_1 \to \alpha_2 \to \alpha_3 \to \alpha_4$, $\alpha_3 \to \alpha_5$.
+- **Ownership:** Agent $X$: $\{\alpha_1, \alpha_4, \alpha_5\}$, Agent $Y$: $\{\alpha_2\}$, Agent $Z$: $\{\alpha_3\}$.
+- **Textbook Misprint:** In the printed prose, the utilities of agents $y$ and $z$ were swapped.
+- **Mathematical Reality:** Under truthful reporting, $\alpha_1$ is unattacked $\implies \alpha_1 \in GE$; $\alpha_1$ defeats $\alpha_2 \implies \alpha_2$ is OUT; $\alpha_3$ is defended $\implies \alpha_3 \in GE$; $\alpha_3$ defeats $\alpha_4, \alpha_5$.
+- **Correct Truthful Payoffs:** $u_X = 1$, $u_Y = 0$, $u_Z = 1$.
+- **Strategic Manipulation:** If Agent $X$ conceals $\alpha_1$, $\alpha_2$ becomes unattacked, defeating $\alpha_3$, which frees $\alpha_4$ and $\alpha_5$ to enter $GE$. Agent $X$'s utility strictly increases from **1 to 2**, proving the grounded mechanism is manipulable.
+
+![Example 5.10 Manipulation Walkthrough](diagrams/example_5_10_manipulation.svg)
+
+### 2. Discussion after Example 5.11: Protecting Argument Erratum
+- **Textbook Misprint:** The author referred to the protective argument as $\alpha_5$, which already existed as an argument owned by $X$ attacked by $\alpha_3$.
+- **Mathematical Reality:** The protective argument is a new, unattacked argument **$\alpha_6$** owned by Agent $X$ with directed attack $\alpha_6 \to \alpha_3$.
+- **Proof of Non-Necessity:** Because $\alpha_6$ is unattacked, it is unconditionally accepted, defeating $\alpha_3$ and protecting both $\alpha_4$ and $\alpha_5$. Agent $X$ achieves utility $u_X = 4$ (maximum possible). Truthfulness is a dominant strategy, yet the odd path $\alpha_1 \to \alpha_2 \to \alpha_3 \to \alpha_4$ (len 3) still exists in the graph. This proves Theorem 5.4 is **sufficient, but NOT necessary**.
+
+![Protected Indirect Defeat](diagrams/example_5_11_protected_defeat.svg)
+
+---
+
+## Project Structure & Architecture
 
 ```
-argumentation_engine/
+Argumentation/
 ├── src/
 │   └── argumentation/
 │       ├── __init__.py           # Package exports
-│       ├── framework.py          # ArgumentationFramework class & graph operations
-│       ├── defense.py            # Conflict-free, defense, characteristic function F
-│       ├── semantics.py          # Grounded, Complete, Preferred, Stable, Semi-stable
-│       ├── labelling.py          # Caminada 3-valued labellings (IN/OUT/UNDEC)
-│       ├── acceptance.py         # Skeptical, credulous, rejected acceptance status
-│       ├── mechanism.py          # Grounded direct mechanism & best responses
-│       ├── strategyproof.py      # Theorem 5.3 (exact) & Theorem 5.4 (odd-path)
-│       ├── graph_generator.py    # Random AF & agent partition generator
+│       ├── framework.py          # ArgumentationFramework graph & adjacency representation
+│       ├── defense.py            # Conflict-free, defense, characteristic function F, complete
+│       ├── semantics.py          # Grounded, Complete, Preferred, Stable, Semi-stable semantics
+│       ├── labelling.py          # Caminada 3-valued labellings (IN/OUT/UNDEC) & verification
+│       ├── acceptance.py         # Skeptical, credulous, and rejected acceptance status
+│       ├── mechanism.py          # Grounded Direct Mechanism & best response evaluation
+│       ├── strategyproof.py      # Theorem 5.3 exact IC check & Theorem 5.4 2-state parity BFS
+│       ├── graph_generator.py    # Erdős-Rényi AF generator & uniform agent partitioning
 │       └── visualizer.py         # Terminal ASCII tables & formatting
 ├── experiments/
-│   ├── run_experiments.py       # 3,000 instance benchmark suite
-│   └── plot_results.py          # SVG chart & HTML dashboard generator
+│   ├── run_experiments.py       # 3,000-instance benchmark generator & statistical suite
+│   └── plot_results.py          # Vector SVG chart and interactive dashboard generator
 ├── tests/
-│   ├── test_framework.py        # Framework, defense & characteristic tests
-│   ├── test_semantics.py        # Classical semantics & hierarchy tests
-│   ├── test_labelling_acceptance.py # Labellings & acceptance tests
+│   ├── test_framework.py        # Framework, defense & characteristic function tests
+│   ├── test_semantics.py        # Classical semantics & hierarchy inclusion tests
+│   ├── test_labelling_acceptance.py # Caminada labelling & acceptance tests
 │   └── test_strategic.py        # Strategic manipulation, Thm 5.3 & 5.4 tests
 ├── examples/
-│   └── textbook_examples.py     # Canonical textbook cases (5.10, 5.11, 3-cycles)
-├── results/
-│   ├── instances.csv            # Granular data for all 3,000 instances
+│   └── textbook_examples.py     # Canonical textbook cases (5.10, 5.11, odd cycles)
+├── diagrams/                    # Standalone publication-grade SVGs
+│   ├── system_architecture.svg
+│   ├── semantics_labelling_example.svg
+│   ├── example_5_10_manipulation.svg
+│   ├── example_5_11_protected_defeat.svg
+│   └── parity_bfs_state_graph.svg
+├── results/                     # Experimental outputs & datasets
+│   ├── instances.csv            # Granular raw data for all 3,000 runs
 │   ├── summary.csv              # Aggregated statistics by probability p
-│   ├── counterexamples.json     # Manipulation witnesses & edge cases
-│   ├── strategyproof_comparison.svg # Vector comparison chart
-│   ├── outcomes_breakdown.svg   # Vector stacked breakdown chart
+│   ├── counterexamples.json     # Manipulation witnesses & deviation traces
+│   ├── strategyproof_comparison.svg
+│   ├── outcomes_breakdown.svg
 │   └── dashboard.html           # Interactive visual dashboard
-├── demo.py                      # 6-step interactive/automated demonstration
-├── REPORT.md                    # Comprehensive 8-12 page technical report
-├── README.md                    # Project documentation (this file)
-└── requirements.txt             # Project dependencies (zero external required!)
+├── demo.py                      # 6-step interactive CLI demonstration
+├── generate_diagrams.py         # Vector diagram generator script
+├── validate_docs.py             # XML/HTML strict validator script
+├── report.html                  # Formal comprehensive HTML report
+├── REPORT.md                    # Full markdown technical report
+├── requirements.txt             # Project requirements (Zero external dependencies!)
+└── README.md                    # Project documentation (this file)
 ```
 
 ---
 
-## Theoretical Overview
+## Core Algorithms & Implementations
 
-### Dung Semantics Hierarchy
-For any finite argumentation framework $AF = \langle A, R \rangle$:
-$$\text{Stable} \subseteq \text{Semi-stable} \subseteq \text{Preferred} \subseteq \text{Complete} \subseteq \text{Admissible}$$
-$$\text{Grounded} \subseteq \bigcap \text{Complete}$$
+### Part 1: Argumentation Engine
+- **Framework Representation:** Directed graph $AF = \langle A, R \rangle$ with dual precomputed adjacency dictionaries (`attackers` and `targets`) enabling $O(1)$ neighborhood queries.
+- **Conflict-Freeness:** $S \cap S^+ = \emptyset$.
+- **Defense (Acceptability):** $\forall b \in \text{attackers}[a], \exists c \in S \text{ s.t. } (c, b) \in R$.
+- **Characteristic Function:** $F_{AF}(S) = \{a \in A \mid S \text{ defends } a\}$.
+- **Classical Semantics:**
+  - *Grounded:* Unique least fixed point of $F_{AF}$ via Kleene iteration from $\emptyset$.
+  - *Complete:* All conflict-free fixed points $S = F_{AF}(S)$.
+  - *Preferred:* Inclusion-maximal complete extensions.
+  - *Stable:* Conflict-free sets with range $S \cup S^+ = A$. Correctly returns `[]` when non-existent (e.g. odd cycles).
+  - *Semi-Stable:* Complete extensions with inclusion-maximal range $S \cup S^+$.
+- **Caminada 3-Valued Labellings:** Bijective $(IN, OUT, UNDEC)$ mappings with independent condition validation.
 
-- **Grounded Extension**: Always exists, always unique.
-- **Preferred Extension**: Always exists (at least one).
-- **Semi-stable Extension**: Always exists in finite frameworks. If stable extensions exist, semi-stable extensions coincide with stable extensions.
-- **Stable Extension**: May not exist (e.g. directed 3-cycle $a \to b \to c \to a$).
+![Semantics and Labellings](diagrams/semantics_labelling_example.svg)
 
-### Strategic Argumentation & Direct Mechanisms
-Let agents $1, \dots, N$ hold a disjoint partition $A = \bigcup_{i=1}^N A_i$.
-When agents reveal subsets $R_i \subseteq A_i$, the mechanism selects the grounded extension of the induced graph:
-$$g(R_1, \dots, R_N) = GE\left(AF\left[\bigcup_{i=1}^N R_i\right]\right)$$
-The utility of agent $i$ is:
-$$u_i(R_1, \dots, R_N) = \left|A_i \cap g(R_1, \dots, R_N)\right|$$
+### Part 2: Strategic Argumentation Mechanism
+- **Grounded Direct Mechanism:** Evaluates $g(R_1, \dots, R_N) = GE(AF[\bigcup_{i=1}^N R_i])$. Correctly deletes incident attack edges when arguments are withheld.
+- **Utility:** $u_i = |A_i \cap g(R)|$ against true owned arguments.
+- **Theorem 5.3 Verifier:** Exhaustively checks whether truthfulness $A_i$ is a weak dominant strategy against all $R_{-i} \in \prod_{j \neq i} 2^{A_j}$ and deviations $S_i \subseteq A_i$.
+- **Theorem 5.4 2-State Parity BFS:** Explores $(vertex, parity) \in A \times \{0, 1\}$ over $G \times \mathbb{Z}_2$, catching odd paths, cycles, and self-attacks in exact $O(|A| + |R|)$ time.
 
-### Theorem 5.3 vs. Theorem 5.4
-- **Theorem 5.3 (Strategyproofness)**:
-  A mechanism is strategyproof if and only if for every agent $i$, truthful revelation is a weak dominant strategy:
-  $$\forall i, \forall R_{-i}, \forall S_i \subseteq A_i: \quad u_i(A_i, R_{-i}) \ge u_i(S_i, R_{-i})$$
-- **Theorem 5.4 (Odd-Length Path Condition)**:
-  If no agent holds two arguments $\alpha, \beta$ connected by an odd-length directed attack path in the full graph, then the grounded direct mechanism is strategyproof.
+![Parity BFS](diagrams/parity_bfs_state_graph.svg)
 
-> **Crucial Distinction**:
-> **Theorem 5.4 is SUFFICIENT, NOT NECESSARY.**
-> If the condition holds, strategyproofness is guaranteed. However, an instance can be strategyproof even when the condition fails (e.g., when protective arguments shield the agent's positions).
-
----
-
-## Textbook Misprints Clarification
-
-As noted on Page 2 of the assignment specification:
-1. **Example 5.10 Utility Misprint**: In textbook Example 5.10, the utilities of agents $y$ and $z$ were swapped in the text. Under truthful reporting, $GE = \{1, 3\}$, meaning Agent Y ($A_Y = \{2\}$) has utility $0$, and Agent Z ($A_Z = \{3\}$) has utility $1$.
-2. **Discussion after Example 5.11 Misprint**: In the text following Example 5.11, the argument that cancels the indirect self-defeat is referred to as $\alpha_5$. The correct protecting argument is $\alpha_6$, which attacks $\alpha_3$.
-
-Both corrections are implemented, documented, and tested in `examples/textbook_examples.py`.
+### Part 3: Powerset Grounded Caching Optimization
+To verify Theorem 5.3 across 3,000 instances without multi-core overhead:
+- Any revealed profile is a subset of $A$ ($n \le 8$).
+- Total possible revealed subsets: $2^8 = 256$.
+- We precompute $GE(AF[X])$ for all 256 subsets in ~1 ms upon framework creation.
+- Theorem 5.3 deviation checks execute via $O(1)$ dictionary lookups, allowing **3,000 instances to be verified in 2.50 seconds** (~1,200 instances/second).
 
 ---
 
-## Installation & Requirements
+## Quickstart & Execution Guide
 
-The core engine is built using **pure Python 3 (standard library only)**. It has **zero required external dependencies**!
-
-### Requirements
-- Python 3.8+ (tested on Python 3.12)
-- Optional: `matplotlib` (if PNG export is desired; SVG and HTML generation are built-in without dependencies).
-
-### Setup
-Navigate to the directory:
+### Zero Dependencies Setup
+The entire engine runs on **pure Python 3 (standard library only)**.
 ```powershell
+# Navigate to the repository
 cd C:\Users\ASUS\Downloads\prog\Argumentation
 ```
 
----
-
-## Quickstart & Demonstration
-
-To execute the complete 6-step demonstration workflow:
-
+### 1. Run Automated & Interactive CLI Demonstration
+Executes all 6 required demonstration steps with formatted ASCII tables:
 ```powershell
 python demo.py
 ```
-
-### Demonstration Steps Covered:
-1. **Step 1**: Argumentation Framework initialization, adjacency dictionaries, and defense.
-2. **Step 2**: Dung semantics computation (Grounded, Complete, Preferred, Stable, Semi-stable).
-3. **Step 3**: Caminada 3-valued labellings and acceptance status reporting.
-4. **Step 4**: Strategic argumentation with 3 agents (Example 5.10 manipulation: utility increases $1 \to 2$).
-5. **Step 5**: Independent verification of Theorem 5.3 and Theorem 5.4 (including Example 5.11 protected defeat).
-6. **Step 6**: Presentation of 3,000-instance experimental results, statistics, and counterexamples.
-
 To run an individual step:
 ```powershell
 python demo.py --step 4
 ```
 
----
-
-## Running the Test Suite
-
-The test suite covers 25 comprehensive unit and integration tests:
-
+### 2. Run Comprehensive Unit Test Suite
+Executes all 25 unit and integration tests:
 ```powershell
-$env:PYTHONPATH="src"
 python -m unittest discover tests
 ```
-
-Expected output:
+*Output:*
 ```
 .........................
 ----------------------------------------------------------------------
@@ -220,50 +188,51 @@ Ran 25 tests in 0.002s
 OK
 ```
 
----
-
-## Randomized Experiments (3,000 Runs)
-
-To re-run the 3,000 randomized experiments across $p \in \{0.15, 0.25, 0.35\}$:
-
+### 3. Re-run 3,000 Randomized Experiments
 ```powershell
-$env:PYTHONPATH="src"
-python experiments/run_experiments.py
+python -m experiments.run_experiments
 ```
 
-To re-generate the vector charts and interactive dashboard:
+### 4. Re-generate Plots & Interactive Dashboard
 ```powershell
-$env:PYTHONPATH="src"
-python experiments/plot_results.py
+python -m experiments.plot_results
 ```
 
-Open `results/dashboard.html` in any web browser to view the interactive dashboard.
+### 5. Validate All SVGs & HTML Documentation
+```powershell
+python validate_docs.py
+```
+
+### 6. View Submission Reports
+- **Formal HTML Technical Report:** Open [`report.html`](report.html) in any web browser (printable to PDF via `Ctrl+P`).
+- **Interactive Visual Dashboard:** Open [`results/dashboard.html`](results/dashboard.html) in any web browser.
+- **Markdown Technical Report:** View [`REPORT.md`](REPORT.md).
 
 ---
 
-## Experimental Results Summary
+## Answers to Required Assignment Questions
 
-From our 3,000 randomized runs (1,000 per probability level, 3 agents, $n \in \{6, 7, 8\}$):
+1. **What is the fraction of instances that are strategyproof for each $p$?**
+   - $p = 0.15$: **59.20%**
+   - $p = 0.25$: **24.60%**
+   - $p = 0.35$: **13.00%**
+   - *Reason:* Denser graphs multiply indirect attack paths, dramatically expanding strategic manipulation opportunities.
 
-| Attack Prob ($p$) | Instances | Strategyproof (Thm 5.3) | SP Fraction | Thm 5.4 Holds | Thm 5.4 Fraction | Cond Holds & Not SP (Exp. 0) | SP & Cond Fails |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **0.15** | 1,000 | 592 | **59.20%** | 66 | 6.60% | **0** | 526 |
-| **0.25** | 1,000 | 246 | **24.60%** | 4 | 0.40% | **0** | 242 |
-| **0.35** | 1,000 | 130 | **13.00%** | 0 | 0.00% | **0** | 130 |
-| **Overall** | **3,000** | **968** | **32.27%** | **70** | **2.33%** | **0** | **898** |
+2. **Are there instances that satisfy the condition of Theorem 5.4 yet are not strategyproof?**
+   - **Exactly 0 instances** across all 3,000 runs, empirically confirming the 100% mathematical soundness of Theorem 5.4 as a sufficient condition.
 
-### Key Findings
-1. **Soundness of Theorem 5.4**: `Cond Holds & Not SP` was **0 across all 3,000 instances**, verifying empirically that Theorem 5.4 is a sound sufficient condition.
-2. **Sufficiency vs. Necessity**: **898 instances** were strategyproof despite Theorem 5.4 failing.
-3. **Graph Density Impact**: As $p$ increases from 0.15 to 0.35, the fraction of strategyproof frameworks drops sharply from 59.2% to 13.0% due to the formation of dense attack cycles.
+3. **Are there instances that are strategyproof although the condition fails?**
+   - **898 instances** (29.93% of the total dataset), empirically confirming that Theorem 5.4 is **conservative and not necessary**. Protective arguments and competing agent attacks frequently shield an agent's positions.
 
 ---
 
-## Deliverables & Report
+## Submission Checklist
 
-- **Code**: Clean, typed, modular code in `src/argumentation/`.
-- **Tests**: Exhaustive test suite in `tests/`.
-- **Demonstration**: Automated walkthrough script in `demo.py`.
-- **Technical Report**: Full 8-12 page equivalent comprehensive report in [`REPORT.md`](REPORT.md).
-- **Interactive Dashboard**: `results/dashboard.html`.
-- **Raw Data**: `results/instances.csv`, `results/summary.csv`, `results/counterexamples.json`.
+- [x] **Source Code:** Typed, modular, clean Python in `src/argumentation/` (zero dependencies).
+- [x] **Unit Tests:** 25 passing automated unit tests in `tests/`.
+- [x] **Demonstration:** Interactive 6-step CLI script in `demo.py`.
+- [x] **Full Datasets:** `results/instances.csv`, `results/summary.csv`, `results/counterexamples.json`.
+- [x] **Vector Diagrams:** Standalone high-res SVGs in `diagrams/` and `results/`.
+- [x] **Interactive Dashboard:** `results/dashboard.html`.
+- [x] **Technical Reports:** Formally documented in `report.html` and `REPORT.md`.
+- [x] **Documentation:** Comprehensive `README.md` project document.
