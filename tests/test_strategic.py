@@ -3,7 +3,13 @@ Unit tests for Strategic Argumentation, Theorems 5.3 and 5.4,
 and manipulation counterexamples.
 """
 
+import os
+import sys
 import unittest
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from argumentation.framework import ArgumentationFramework
 from argumentation.mechanism import (
     grounded_direct_mechanism,

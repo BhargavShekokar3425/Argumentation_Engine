@@ -2,7 +2,12 @@
 Unit tests for Caminada labellings and skeptical/credulous acceptance status.
 """
 
+import os
+import sys
 import unittest
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
+
 from argumentation.framework import ArgumentationFramework
 from argumentation.semantics import compute_complete
 from argumentation.labelling import (

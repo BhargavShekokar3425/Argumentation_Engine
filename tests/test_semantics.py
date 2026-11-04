@@ -8,7 +8,12 @@ Unit tests for Argumentation Semantics:
 And validation of foundational theoretical relationships.
 """
 
+import os
+import sys
 import unittest
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
+
 from argumentation.framework import ArgumentationFramework
 from argumentation.semantics import (
     compute_grounded,
