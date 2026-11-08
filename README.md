@@ -6,6 +6,7 @@
 - **Bhargav Shekokar** (B23CS1008)
 - **Darsh patel** (B23CM1054)
 - **Tanisha Saini** (B23CM1042)
+- **Priyanshu Shah** (B23CS1099)
 
 ---
 
